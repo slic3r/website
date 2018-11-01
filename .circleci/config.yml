@@ -36,7 +36,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-        at: /tmp/hugo
+          at: /tmp/hugo
       
       - add_ssh_keys: *add_ssh_keys
 
