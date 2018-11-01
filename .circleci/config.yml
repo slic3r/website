@@ -5,11 +5,11 @@ anchor_2: &add_ssh_keys
       - "79:70:86:f8:9e:e3:80:c6:b4:73:22:25:ca:83:20:3a"
 
 defaults: &defaults
-    working_directory: ~/hugo
+    working_directory: /tmp/hugo
     docker:
       - image: cibuilds/hugo:latest
     environment:
-      HUGO_BUILD_DIR: ~/hugo/public
+      HUGO_BUILD_DIR: /tmp/hugo/public
 
 version: 2
 jobs:
@@ -28,7 +28,7 @@ jobs:
       #           --empty-alt-ignore --disable-external
       
       - persist_to_workspace:
-          root: ~/hugo
+          root: /tmp/hugo
           paths:
             - public
 
@@ -36,7 +36,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-        at: ~/hugo
+        at: /tmp/hugo
       
       - add_ssh_keys: *add_ssh_keys
 
@@ -50,7 +50,7 @@ jobs:
             git rm -rf .
             cp -a $HUGO_BUILD_DIR/. .
             # copy .circleci as well so that the branch filter is honored
-            mkdir -p .circleci && cp -a ~/hugo/.circleci/. .circleci/.
+            mkdir -p .circleci && cp -a /tmp/hugo/.circleci/. .circleci/.
             git add -A
             git commit -m "Automated deployment to GitHub Pages: ${CIRCLE_SHA1}" --allow-empty
             git push origin gh-pages
