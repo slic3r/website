@@ -1,0 +1,38 @@
+{{ define "content" }}
+
+    <div class="header page">
+        <h1>
+            {{ .Title }}
+        </h1>
+    </div>
+    
+    <div id="blog" class="padding">
+        <div class="left">
+            <div class="post">
+                <span class="meta">Posted by {{ .Params.author }} on {{ .Date.Format "2006-01-02" }}</span>
+                <div class="content">
+                    {{ .Content }}
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            <div class="sidebar_box">
+                <h4>Blog archive:</h4>
+
+                <ul>
+                    {{ range where .Site.RegularPages "Section" "==" "blog" }}
+                    <li>
+                        <a href="{{ .URL }}">{{ .Title }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+{{ end }}

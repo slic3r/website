@@ -1,0 +1,4 @@
+baseURL = "http://slic3r.org/"
+languageCode = "en-us"
+title = "Slic3r"
+disableKinds = ["taxonomy", "taxonomyTerm"]

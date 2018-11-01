@@ -1,0 +1,27 @@
+{{ define "content" }}
+
+    <div class="header page">
+        <h1>
+            Release notes for <b>{{ .Title }}</b> <small>({{ .Date.Format "2006-01-02" }})</small>
+            {{ if .Params.stable }}
+                <span style="font-size: 50%; font-weight: bold; color: red">stable</span>
+            {{ end }}
+        </h1>
+    </div>
+    
+    <div class="padding">
+        <div class="left">
+            {{ .Content }}
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            <div class="sidebar_box">
+                {{ partial "releases" . }}
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+{{ end }}

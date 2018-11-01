@@ -1,0 +1,186 @@
+{{ define "content" }}
+
+			<div class="header header_home page">
+				<a href="http://github.com/slic3r/Slic3r"><img style="position: absolute; top: -16px; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+				
+				{{ $original := .Resources.GetMatch "screenshot.png" }}
+				{{ $resized := $original.Resize "400x" }}
+				<img src="{{ $resized.RelPermalink }}" class="main_screenshot" />
+		        
+				<div class="info">
+					<h1>{{ .Params.opening }}</h1>
+					
+					{{ .Content }}
+					
+					<a href="/download" class="button icon"><img src="/images/go_icon.png" alt="" /><span>Download Now!</span></a>
+					<span class="trial">Free. For macOS, Windows and Linux.</span>
+					
+					<div class="clear" style="margin-top: 40px">
+                        {{ range first 1 (where .Site.RegularPages "Section" "==" "blog") }}
+                            Latest blog article:
+                            <a href="{{ .URL }}" style="display: inline; text-decoration: none"><b>{{ .Title }}</b></a> &raquo;
+                        {{ end }}
+					</div>
+				</div>
+				
+				<div class="clear"></div>
+			</div>
+			
+			<div id="home" class="padding">
+				
+				<div id="hp-boxes">
+				    
+				    <div class="sidebar_box" style="width: 385px; border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; ">
+						<h4>What does Slic3r do?</h4>
+						<p>Slic3r is the tool you need to <b>convert a digital 3D model into printing instructions for your 3D printer</b>. It cuts the model into horizontal slices (<b>layers</b>), generates toolpaths to fill them and calculates the amount of material to be extruded. <a href="/about">Read more...</a></p>
+					</div>
+					
+				    <div class="sidebar_box" style="width: 385px; border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; ">
+                        <div style="float: right">
+                            {{ partial "paypal" . }}
+                        </div>
+						<p>Slic3r is <b>free software</b>, developed by <a href="/about">Alessandro Ranellucci</b></a> with the help of <a href="/about">contributors</a> and community.<br />
+						    If you find this software useful, want to say thanks and encourage development, please consider a donation (<a href="/donations/">more about donations</a>).</p>
+					</div>
+					
+				</div>
+				
+				<div id="features">
+
+					<div class="section_title">
+						<h3>Features</h3>
+					</div>
+
+					<p>
+						<b>Compatible with your printer too.</b>
+						RepRap (Prusa Mendel, MendelMax, Huxley, Tantillus...), Ultimaker, Makerbot, Lulzbot AO-100, TAZ, MakerGear M2, Rostock, Mach3, Bukobot and lots more. And even DLP printers.
+					</p>
+					
+					<p>
+						<b>Fast G-code generation is fast.</b>
+						<!--<img src="images/icons/time.gif" alt="" />-->
+						Don't wait hours for slicing that detailed model. Slic3r is about 100x faster than Skeinforge. It also uses multithreading for parallel computation.
+					</p>
+					
+					<p class="last">
+						<b>Lots of input/output formats.</b>
+						Slic3r reads STL, AMF and OBJ files while it can output G-code and SVG files.
+					</p>
+					
+					<div class="clear spacer"></div>
+					
+					<p>
+						<b>Do you like the graphical interface or command line?</b>
+						All the features of the user-friendly interface are also available from command line. This allows to integrate Slic3r in your custom toolchain and batch operations as you like.
+					</p>
+					
+					<p>
+						<b>Open source, open development.</b>
+						Slic3r is open source software, licenced under the AGPLv3 license. The development is centered on GitHub and the #slic3r IRC channel on FreeNode, where the community is highly involved in testing and providing ideas and feedback.
+					</p>
+					
+					<p class="last">
+						<b>Dependencies? Nah.</b>
+						Slic3r is super-easy to run: download, double click and enjoy. No dependencies needed. Hassle-free. For MacOS X, Windows, Linux.
+					</p>
+					
+					<div class="clear spacer"></div>
+					
+					<p>
+						<b>Print with <strike>dual</strike> multiple extruders.</b>
+						Print beautiful colored objects, or use your secondary extruder to build support material. Or put a larger nozzle on it and print a faster infill.
+					</p>
+					
+					<p>
+						<b>Use brim for the best adhesion.</b>
+						This unique feature improves built plate adhesion by generating a base flange around your objects that you can easily remove after printing.
+					</p>
+					
+					<p class="last">
+						<b>Microlayering: save time, increase accuracy.</b>
+						You can choose to print a thicker infill to benefit from low layer heights on perimeters and still keep your print time within a reasonable amount.
+					</p>
+					
+					<div class="clear spacer"></div>
+					
+					<p>
+						<b>Compose a plate but print one object at time.</b>
+						Use the built-in plating interface that allows to place objects with drag-and-drop, rotate and scale them, arrange everything as you like. The <i>sequential printing</i> feature allows to print one complete object at time in a single print job.
+					</p>
+					
+					<p>
+						<b>Cool cooling strategies.</b>
+						A very smart cooling logic will regulate your fan speed and print speed to ensure each layer has enough time to cool down before next one is laid on it.
+					</p>
+					
+					<p class="last">
+						<b>Manage multiple printers, filaments and build styles.</b>
+						The configuration handling system was designed for people working with multiple machines and filaments: you can save configurations as presets for each category avoiding to multiply your saved configurations.
+					</p>
+					
+					<div class="clear spacer"></div>
+					
+					<p>
+						<b>Enjoy support material.</b>
+						Automatic generation of support material for overhangs.
+					</p>
+					
+					<!--
+					<p>
+						<b>Cooling</b>
+						A very smart cooling logic will regulate your fan speed and print speed to ensure each layer has enough time to cool down before next one is laid on it.
+					</p>
+					
+					<p class="last">
+						<b>Manage multiple printers, filaments and build styles</b>
+						The configuration handling system was designed for people working with multiple machines and filaments: you can save configurations as presets for each category avoiding to multiply your saved configurations.
+					</p>
+					-->
+
+					<div class="clear"></div>
+				</div>
+				
+				<div id="screenshots">
+				
+					<div class="section_title">
+						<h3>Gallery</h3>
+					</div>
+				
+					<div class="xscrollable">
+						<div class="items">
+						
+                            <ul style="margin: 0">
+                                {{ range $i, $item := .Resources.Match "gallery-*" }}
+                                <li>
+                                    <a data-title-id="gallery-{{ $i }}" href="{{ .RelPermalink }}" class="screenshot" rel="group">
+				                        {{ $thumb := .Fill "130x90" }}
+                                        <img src="{{ $thumb.RelPermalink }}" />
+                                    </a>
+                                    <div id="gallery-{{ $i }}" style="display: none">
+                                        {{ .Title | markdownify }}
+                                    </div>​
+                                </li>
+                                {{ end }}
+                            </ul>
+						</div>
+					</div>
+					
+					<div class="clear"></div>
+				</div>
+				
+			</div>
+			
+<div class="padding">
+    <div class="section_title">
+        <h3>Links</h3>
+    </div>
+    
+    <div style="float: left; width: 200px; text-align: center">
+        <a href="http://reprap.org/"><img src="/img/reprap_logo.png" /><br />The RepRap Project</a>
+    </div>
+    
+    <div class="clear"></div>
+</div>
+
+
+{{ end }}

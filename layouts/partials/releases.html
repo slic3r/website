@@ -1,0 +1,12 @@
+<h4>Release notes:</h4>
+
+<ul>
+    {{ range where .Site.RegularPages "Section" "==" "releases" }}
+    <li>
+        <a href="{{ .URL }}">{{ .Title }}</a>
+        {{ if .Params.stable }}
+            [stable]
+        {{ end }}
+    </li>
+    {{ end }}
+</ul>
