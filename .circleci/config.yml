@@ -21,11 +21,11 @@ jobs:
 
       - run: HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
  
-      - run:
-          name: test our generated HTML files
-          command: |
-            htmlproofer $HUGO_BUILD_DIR --allow-hash-href --check-html \
-                --empty-alt-ignore --disable-external
+      # - run:
+      #     name: test our generated HTML files
+      #     command: |
+      #       htmlproofer $HUGO_BUILD_DIR --allow-hash-href --check-html \
+      #           --empty-alt-ignore --disable-external
       
       - persist_to_workspace:
           root: ~/hugo
