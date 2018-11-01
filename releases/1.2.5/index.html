@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>  
+	<title>Slic3r - 1.2.5</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" type="application/rss+xml" title="Slic3r RSS feed" href="/rss" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+	<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/tan-pink.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.tools.js"></script>
+	<script type="text/javascript" src="/javascripts/fancybox/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="/javascripts/site.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			
+			$("a.screenshot").fancybox({
+			    openEffect	: 'elastic',
+    	        closeEffect	: 'elastic',
+    	        helpers : {
+    		        title : {
+    			        type : 'inside'
+    		        }
+    	        },
+				'overlayShow'	:	false,
+				'beforeLoad'    : function() {
+                    var el, id = $(this.element).data('title-id');
+                    if (id) {
+                        el = $('#' + id);
+                        if (el.length) {
+                            this.title = el.html();
+                        }
+                    }
+                }
+			});
+
+			
+			$(".scrollable").scrollable({ });
+		});
+	</script>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <link type="text/css" href="/inc/jquery/css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div id="header">
+		<div class="page">
+			
+			<a href="/" class="logo"><span>Slic3r</span></a>
+			<div id="subtitle">G-code generator for 3D printers</div>
+			
+			<ul>
+			    <li><a href="/">Home</a></li>
+			    <li><a href="/about">About</a></li>
+			    <li><a href="/download">Download</a></li>
+			    <li><a href="http://manual.slic3r.org/" style="color: red">The Manual</a></li>
+			    
+			        <li><a href="/blog/new-stable-1.2.9/">Blog</a></li>
+			    
+			    <li><a href="/donations">Donate</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div id="page">
+				
+		<div class="top"></div>
+		<div class="content">
+			
+			
+
+    <div class="header page">
+        <h1>
+            Release notes for <b>1.2.5</b> <small>(2015-01-08)</small>
+            
+        </h1>
+    </div>
+    
+    <div class="padding">
+        <div class="left">
+            
+
+<p>More bugfixes. We want to make 1.2.x stable soon.</p>
+
+<p>For the whole list of changes and new features see the release notes for <a href="/releases/1.2.0">1.2.0</a>, <a href="/releases/1.2.1">1.2.1</a>, <a href="/releases/1.2.2">1.2.2</a> and <a href="/releases/1.2.3">1.2.3</a>.</p>
+
+<h4 id="new-features">New features:</h4>
+
+<ul>
+<li>New option for generating <strong>volumetric E values</strong>. (<a href="https://github.com/alexrj/Slic3r/issues/1746">#1746</a>)</li>
+<li>Each object in the plater can be <strong>exported individually</strong> by using a new &ldquo;Export STL&rdquo; command in its own contextual menu (right-click). (<a href="https://github.com/alexrj/Slic3r/issues/2479">#2479</a>)</li>
+<li>A button was added to <strong>test OctoPrint connectivity</strong> on the fly. (<a href="https://github.com/alexrj/Slic3r/issues/2509">#2509</a>)</li>
+</ul>
+
+<h4 id="improvements">Improvements:</h4>
+
+<ul>
+<li><strong>3D view</strong> has nicer <strong>color and lighting scheme</strong>, and nicer details. It also uses less memory.</li>
+<li>The <strong>motion planner</strong> that generates smart travel moves when Avoid crossing perimeters was improved in order to support many cases that were previously not handled. It also generates more straight paths.</li>
+<li>Perimeter speed for <strong>nested islands</strong> are now supported properly.</li>
+<li>The logic for travel moves/retractions/motion planning was rewritten in order to handle several edge cases that weren&rsquo;t handled optimally.</li>
+</ul>
+
+<h4 id="changes">Changes:</h4>
+
+<ul>
+<li>The <em>Vibration Limit</em> option is now marked as deprecated. (<a href="https://github.com/alexrj/Slic3r/issues/2483">#2483</a>)</li>
+<li>Mouse wheel zooming direction is now reversed. (<a href="https://github.com/alexrj/Slic3r/issues/2478">#2478</a>)</li>
+</ul>
+
+<h4 id="bugfix">Bugfix:</h4>
+
+<ul>
+<li>Fixed a timeout issue with OctoPrint upload. (<a href="https://github.com/alexrj/Slic3r/issues/2481">#2481</a>)</li>
+<li>Fixed an issue causing some gap fill to be omitted in rare cases. (<a href="https://github.com/alexrj/Slic3r/issues/2474">#2474</a>)</li>
+<li>Fixed an issue in admesh code preventing some rare binary STL files from being parsed correctly on Windows. (<a href="https://github.com/alexrj/Slic3r/issues/2461">#2461</a>)</li>
+<li>Fixed an issue causing random loss of perimeter segments in rare circumstances (<a href="https://github.com/alexrj/Slic3r/issues/2495">#2495</a>)</li>
+<li>Fixed artifacts being introduced in model when regenerating perimeters multiple times via incremental slicing (<a href="https://github.com/alexrj/Slic3r/issues/2494">#2494</a>)</li>
+<li>Fixed an issue in the newly introduced pressure regulation feature causing too much retractions and lack of discharge at the end of the print. (<a href="https://github.com/alexrj/Slic3r/issues/2470">#2470</a>)</li>
+<li>Fixed minor glitches in 3D view (<a href="https://github.com/alexrj/Slic3r/issues/2482">#2482</a> <a href="https://github.com/alexrj/Slic3r/issues/2454">#2454</a>)</li>
+<li>Fixed validation for sequential printing being too strict in some cases (<a href="https://github.com/alexrj/Slic3r/issues/2480">#2480</a>)</li>
+<li>Fixed inwards move at loop end being still generated outwards in some rare circumstances (<a href="https://github.com/alexrj/Slic3r/issues/2253">#2253</a>)</li>
+<li>Fixed the About dialog being too small on Windows (<a href="https://github.com/alexrj/Slic3r/issues/2476">#2476</a>)</li>
+<li>Fixed ground alignment of exported STL files after XY rotation/flipping (<a href="https://github.com/alexrj/Slic3r/issues/2512">#2512</a>)</li>
+</ul>
+
+<hr />
+
+<p><img src="01.jpg" alt="" /></p>
+
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            <div class="sidebar_box">
+                <h4>Release notes:</h4>
+
+<ul>
+    
+    <li>
+        <a href="/releases/1.2.9/">1.2.9</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.8/">1.2.8</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.7/">1.2.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.6/">1.2.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.5/">1.2.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.4/">1.2.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.3/">1.2.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.2/">1.2.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.1/">1.2.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.7/">1.1.7</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.0/">1.2.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.6/">1.1.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.5/">1.1.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.4/">1.1.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.3/">1.1.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.2/">1.1.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.0.1/">1.0.1</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.1/">1.1.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.0.0/">1.0.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.0/">1.1.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.10b/">0.9.10b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.9/">0.9.9</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.8/">0.9.8</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.7/">0.9.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.5/">0.9.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.4/">0.9.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.3/">0.9.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.2/">0.9.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.1/">0.9.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.0/">0.9.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.4/">0.8.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.3/">0.8.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.1/">0.8.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.2/">0.8.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.2b/">0.7.2b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.2/">0.7.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.1/">0.7.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.0/">0.7.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.6.0/">0.6.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.7/">0.5.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.6/">0.5.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.5b/">0.5.5b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.4/">0.5.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.3/">0.5.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.2/">0.5.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.1/">0.5.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.0/">0.5.0</a>
+        
+    </li>
+    
+</ul>
+
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+
+			
+		</div>
+		<div class="bottom"></div>
+	</div>
+	
+	<div id="footer" class="page">
+		<p>Slic3r is licensed under the GNU Affero General Public License, version 3<br />
+		    The Slic3r icon was designed by <a href="http://twitter.com/cdugd/">Corey Daniels</a></p>
+		<div class="clear"></div>
+	</div>
+	
+</body>
+</html>

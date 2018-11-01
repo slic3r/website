@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>  
+	<title>Slic3r - Tip: printing with Bowden extruders</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" type="application/rss+xml" title="Slic3r RSS feed" href="/rss" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+	<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/tan-pink.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.tools.js"></script>
+	<script type="text/javascript" src="/javascripts/fancybox/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="/javascripts/site.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			
+			$("a.screenshot").fancybox({
+			    openEffect	: 'elastic',
+    	        closeEffect	: 'elastic',
+    	        helpers : {
+    		        title : {
+    			        type : 'inside'
+    		        }
+    	        },
+				'overlayShow'	:	false,
+				'beforeLoad'    : function() {
+                    var el, id = $(this.element).data('title-id');
+                    if (id) {
+                        el = $('#' + id);
+                        if (el.length) {
+                            this.title = el.html();
+                        }
+                    }
+                }
+			});
+
+			
+			$(".scrollable").scrollable({ });
+		});
+	</script>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <link type="text/css" href="/inc/jquery/css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div id="header">
+		<div class="page">
+			
+			<a href="/" class="logo"><span>Slic3r</span></a>
+			<div id="subtitle">G-code generator for 3D printers</div>
+			
+			<ul>
+			    <li><a href="/">Home</a></li>
+			    <li><a href="/about">About</a></li>
+			    <li><a href="/download">Download</a></li>
+			    <li><a href="http://manual.slic3r.org/" style="color: red">The Manual</a></li>
+			    
+			        <li><a href="/blog/new-stable-1.2.9/">Blog</a></li>
+			    
+			    <li><a href="/donations">Donate</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div id="page">
+				
+		<div class="top"></div>
+		<div class="content">
+			
+			
+
+    <div class="header page">
+        <h1>
+            Tip: printing with Bowden extruders
+        </h1>
+    </div>
+    
+    <div id="blog" class="padding">
+        <div class="left">
+            <div class="post">
+                <span class="meta">Posted by Alessandro Ranellucci on 2013-03-30</span>
+                <div class="content">
+                    <p>I learned that the main goal with Bowden extruders is to reduce the number of retractions in a print. Even fast and long retractions often leave blobs, so we have to fight those.</p>
+
+<p>Slic3r 0.9.9 contains a number of features for that purpose. Here are the recommended settings:</p>
+
+<ul>
+<li><strong>avoid crossing perimeters</strong> (Print Settings): on</li>
+<li><strong>only retract when crossing perimeters</strong> (Print Settings): on</li>
+<li><strong>retract on layer change</strong> (Printer Settings): off</li>
+</ul>
+
+<p>The first setting will also cause Slic3r to finish each island completely before moving to the next one, reducing the need for retraction.</p>
+
+<p>Slic3r 0.9.10 introduced a new useful setting to avoid blobs upon retraction:</p>
+
+<ul>
+<li><strong>wipe</strong> (Printer Settings): on</li>
+</ul>
+
+<p>These settings should help you getting good prints with your Rostock, RepRapPro, Ultimaker or whatever.</p>
+
+<p>Thanks to <a href="http://www.seemecnc.com/">SeeMeCNC</a> and <a href="http://www.wasproject.it/">Wasproject</a> who donated printers to test these features.</p>
+
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            <div class="sidebar_box">
+                <h4>Blog archive:</h4>
+
+                <ul>
+                    
+                    <li>
+                        <a href="/blog/new-stable-1.2.9/">Announcing a new stable release: 1.2.9</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/modifier-meshes/">Tutorial: modifier meshes</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/1.5-years-of-slic3r-development/">1.5 years of Slic3r development</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/tip-handling-large-models/">Tip: handling large models</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/tip-bowden-extruders/">Tip: printing with Bowden extruders</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/tip-printing-vases/">Tip: printing vases</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/present-and-future-of-slic3r/">3D printing - present and future of Slic3r</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/a-not-so-short-talk-with-josef-prusa/">A (not so short) talk with Josef Prusa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/here-and-there-in-the-slic3r-community/">Here and there in the Slic3r community</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/the-birth-of-a-slic3r-community/">The birth of a Slic3r community</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+
+			
+		</div>
+		<div class="bottom"></div>
+	</div>
+	
+	<div id="footer" class="page">
+		<p>Slic3r is licensed under the GNU Affero General Public License, version 3<br />
+		    The Slic3r icon was designed by <a href="http://twitter.com/cdugd/">Corey Daniels</a></p>
+		<div class="clear"></div>
+	</div>
+	
+</body>
+</html>

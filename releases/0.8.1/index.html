@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>  
+	<title>Slic3r - 0.8.1</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" type="application/rss+xml" title="Slic3r RSS feed" href="/rss" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+	<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/tan-pink.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.tools.js"></script>
+	<script type="text/javascript" src="/javascripts/fancybox/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="/javascripts/site.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			
+			$("a.screenshot").fancybox({
+			    openEffect	: 'elastic',
+    	        closeEffect	: 'elastic',
+    	        helpers : {
+    		        title : {
+    			        type : 'inside'
+    		        }
+    	        },
+				'overlayShow'	:	false,
+				'beforeLoad'    : function() {
+                    var el, id = $(this.element).data('title-id');
+                    if (id) {
+                        el = $('#' + id);
+                        if (el.length) {
+                            this.title = el.html();
+                        }
+                    }
+                }
+			});
+
+			
+			$(".scrollable").scrollable({ });
+		});
+	</script>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <link type="text/css" href="/inc/jquery/css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div id="header">
+		<div class="page">
+			
+			<a href="/" class="logo"><span>Slic3r</span></a>
+			<div id="subtitle">G-code generator for 3D printers</div>
+			
+			<ul>
+			    <li><a href="/">Home</a></li>
+			    <li><a href="/about">About</a></li>
+			    <li><a href="/download">Download</a></li>
+			    <li><a href="http://manual.slic3r.org/" style="color: red">The Manual</a></li>
+			    
+			        <li><a href="/blog/new-stable-1.2.9/">Blog</a></li>
+			    
+			    <li><a href="/donations">Donate</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div id="page">
+				
+		<div class="top"></div>
+		<div class="content">
+			
+			
+
+    <div class="header page">
+        <h1>
+            Release notes for <b>0.8.1</b> <small>(2012-05-28)</small>
+            
+        </h1>
+    </div>
+    
+    <div class="padding">
+        <div class="left">
+            
+
+<p>This is a very important update, grab it now and enjoy! I want to say thanks to the wonderful community that has been helping with feedback, early testing and nice ideas. A lot of people is involved in our open &ldquo;quality assurance&rdquo; process!</p>
+
+<h4 id="new-features">New features:</h4>
+
+<ul>
+<li><strong>graphical interface for composing multiple objects</strong> in one single print (with tools for rotation, scaling etc.)</li>
+<li>new <strong>&ndash;merge</strong> switch to compose multiple object with auto-positioning from command line</li>
+<li>new option to <strong>randomize starting points</strong> across layers</li>
+<li>automatic detection of additional required perimeters for avoiding haps in domed/sloping objects (the <em>perimeters</em> settings means now <em>minimum perimeters</em> as Slic3r could add more when needed)</li>
+<li><strong>sequential printing</strong>: print a complete object, then move onto next one, with automatic collision detection</li>
+<li>ability to <strong>export STL</strong> files of composed plates, as well as a <strong>Split</strong>command to turn multi-object files into individual objects</li>
+<li>we can read <strong>OBJ</strong> files now</li>
+</ul>
+
+<h4 id="improvements">Improvements:</h4>
+
+<ul>
+<li><strong>very large memory savings</strong> and speed boosts, allowing to process high-resolutions files without getting out of memory; also, the number of threads is customizable</li>
+<li>very <strong>improved surface quality</strong> due to new smoothing algorithms</li>
+<li>the GUI doesn&rsquo;t block while slicing and a <strong>Cancel</strong> button was added to stop the process</li>
+<li>hole perimeters are extruded in reverse order (from the outermost to the innermost) to get better overhangs</li>
+<li>a slight compensation is applied to avoid small hole shrinkage</li>
+<li>support material now uses honeycomb pattern (much work is still needed on support material)</li>
+<li>retract before changing tool for dual extrusion</li>
+</ul>
+
+<h4 id="changes">Changes:</h4>
+
+<ul>
+<li>SVG colors were inverted to better support DLP printing (next versions will carry more settings for SVG export)</li>
+</ul>
+
+<h4 id="bugfixes">Bugfixes:</h4>
+
+<ul>
+<li>fixed some GUI memory leaks</li>
+<li>fixed some fatal errors</li>
+<li>fixed a bug causing high memory consumption when infilling every 2 or more layers</li>
+<li>some holes where filled</li>
+<li>some nearly-thin walls were discarded</li>
+<li>removed tiny dots/blobs that were generated sometimes</li>
+<li>bottom layer speed ratio wasn&rsquo;t taken into account when estimating layer time</li>
+<li>omit any G92 E0 when in relative mode</li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            <div class="sidebar_box">
+                <h4>Release notes:</h4>
+
+<ul>
+    
+    <li>
+        <a href="/releases/1.2.9/">1.2.9</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.8/">1.2.8</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.7/">1.2.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.6/">1.2.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.5/">1.2.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.4/">1.2.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.3/">1.2.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.2/">1.2.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.1/">1.2.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.7/">1.1.7</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.0/">1.2.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.6/">1.1.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.5/">1.1.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.4/">1.1.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.3/">1.1.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.2/">1.1.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.0.1/">1.0.1</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.1/">1.1.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.0.0/">1.0.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.0/">1.1.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.10b/">0.9.10b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.9/">0.9.9</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.8/">0.9.8</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.7/">0.9.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.5/">0.9.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.4/">0.9.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.3/">0.9.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.2/">0.9.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.1/">0.9.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.0/">0.9.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.4/">0.8.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.3/">0.8.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.1/">0.8.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.2/">0.8.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.2b/">0.7.2b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.2/">0.7.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.1/">0.7.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.0/">0.7.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.6.0/">0.6.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.7/">0.5.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.6/">0.5.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.5b/">0.5.5b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.4/">0.5.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.3/">0.5.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.2/">0.5.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.1/">0.5.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.0/">0.5.0</a>
+        
+    </li>
+    
+</ul>
+
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+
+			
+		</div>
+		<div class="bottom"></div>
+	</div>
+	
+	<div id="footer" class="page">
+		<p>Slic3r is licensed under the GNU Affero General Public License, version 3<br />
+		    The Slic3r icon was designed by <a href="http://twitter.com/cdugd/">Corey Daniels</a></p>
+		<div class="clear"></div>
+	</div>
+	
+</body>
+</html>

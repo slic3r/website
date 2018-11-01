@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>  
+	<title>Slic3r - Announcing a new stable release: 1.2.9</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" type="application/rss+xml" title="Slic3r RSS feed" href="/rss" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+	<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/tan-pink.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.tools.js"></script>
+	<script type="text/javascript" src="/javascripts/fancybox/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="/javascripts/site.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			
+			$("a.screenshot").fancybox({
+			    openEffect	: 'elastic',
+    	        closeEffect	: 'elastic',
+    	        helpers : {
+    		        title : {
+    			        type : 'inside'
+    		        }
+    	        },
+				'overlayShow'	:	false,
+				'beforeLoad'    : function() {
+                    var el, id = $(this.element).data('title-id');
+                    if (id) {
+                        el = $('#' + id);
+                        if (el.length) {
+                            this.title = el.html();
+                        }
+                    }
+                }
+			});
+
+			
+			$(".scrollable").scrollable({ });
+		});
+	</script>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <link type="text/css" href="/inc/jquery/css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div id="header">
+		<div class="page">
+			
+			<a href="/" class="logo"><span>Slic3r</span></a>
+			<div id="subtitle">G-code generator for 3D printers</div>
+			
+			<ul>
+			    <li><a href="/">Home</a></li>
+			    <li><a href="/about">About</a></li>
+			    <li><a href="/download">Download</a></li>
+			    <li><a href="http://manual.slic3r.org/" style="color: red">The Manual</a></li>
+			    
+			        <li><a href="/blog/new-stable-1.2.9/">Blog</a></li>
+			    
+			    <li><a href="/donations">Donate</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div id="page">
+				
+		<div class="top"></div>
+		<div class="content">
+			
+			
+
+    <div class="header page">
+        <h1>
+            Announcing a new stable release: 1.2.9
+        </h1>
+    </div>
+    
+    <div id="blog" class="padding">
+        <div class="left">
+            <div class="post">
+                <span class="meta">Posted by Alessandro Ranellucci on 2015-06-19</span>
+                <div class="content">
+                    
+
+<p>After 10 months of work we&rsquo;re proud to announce a new Slic3r stable release.</p>
+
+<p><img src="01.jpg" alt="" /></p>
+
+<p>The Slic3r project was born in 2011 within the RepRap community as an effort to provide the growing 3D printing technology with an <strong>open and flexible toolchain</strong>. Slic3r, being a true <strong>non-profit community project</strong>, allowed the community to experiment with several <strong>original new features</strong> that have become common thereafter such as <strong>multiple extruders</strong>, <strong>brim</strong>, <strong>microlayering</strong>, <strong>bridge detection</strong>, <strong>command line slicing</strong>, <strong>variable layer heights</strong>, <strong>sequential printing</strong> (one object at time), <strong>honeycomb infill</strong>, <strong>mesh cutting</strong>, <strong>object splitting into parts</strong>, <strong>AMF support</strong>, avoid crossing perimeters, distinct extrusion widths, and much more. All of these features were first introduced in Slic3r and are now part of the commercial software out there.</p>
+
+<p>Slic3r is based on a community of people working collaboratively on <a href="https://github.com/slic3r/Slic3r">GitHub</a>, discussing new features and testing them. It&rsquo;s being used by thousands of people all over the world, and there are more than 500 forks of it. It&rsquo;s a <strong>non-profit project</strong>. 3D printing became a business since the RepRap community was born, but <strong>we want to keep 3D printing free</strong>, and Slic3r will always be an <strong>independent project</strong>, not driven by any business or single vendor.</p>
+
+<p>Oh, and <strong>we don&rsquo;t like marketing buzzwords</strong>. We&rsquo;ll not say <em>&ldquo;the most advanced&rdquo;</em>, <em>&ldquo;the mostly used&rdquo;</em>, <em>&ldquo;the most professional&rdquo;</em> software, although most people think that. (Some companies are advertising that their slicers now finally have honeycomb infill or material presets&hellip; in 2015? Come on, Slic3r introduced those a few years ago&hellip; ;-)) Let&rsquo;s not reinvent the wheel. Jump in and let&rsquo;s <strong>collaborate</strong> to push the technology forward.</p>
+
+<p>This post summarizes some of the improvements since the old stable (1.1.7). Full release notes can be found in the <a href="/releases/1.2.9">1.2.9 release page</a> and in the previous ones.** **</p>
+
+<h2 id="incremental-real-time-slicing">Incremental real-time slicing</h2>
+
+<p>When you change a setting, slicing doesn&rsquo;t restart from scratch but only recalculates the affected parts. Also, when repositioning objects in plater or changing most options no recalculation is needed at all.</p>
+
+<p><img src="02.jpg" alt="" /></p>
+
+<h2 id="3d-preview-with-toolpaths">3D preview (with toolpaths)</h2>
+
+<p>A few nice OpenGL views were added: now we have <strong>2D/3D plater</strong> as well as <strong>2D/3D toolpath preview</strong>. The 3D toolpaths preview is very accurate, as it renders extrusion widths and extrusion heights correctly: G-code based preview tools are not able to do this because G-code does not carry that information.</p>
+
+<p><img src="03.jpg" alt="" /></p>
+
+<h2 id="customizable-bed-shape">Customizable bed shape</h2>
+
+<p><strong>Rectangular</strong>, <strong>circular</strong> or <strong>completely custom</strong> bed shapes can be configured using a <strong>graphical wizard</strong>.</p>
+
+<p><img src="04.jpg" alt="" /></p>
+
+<p><img src="05.jpg" alt="" /></p>
+
+<p><img src="06.jpg" alt="" /></p>
+
+<h2 id="3d-honeycomb-infill">3D Honeycomb infill</h2>
+
+<p>Thanks to David Eccles (gringer) we now have the first infill pattern that varies across Z instead of repeating the same shape in all layers.</p>
+
+<p><img src="07.jpg" alt="" /></p>
+
+<h2 id="integration-with-octoprint">Integration with OctoPrint</h2>
+
+<p>Slice and upload to <a href="http://octoprint.org/">OctoPrint</a> with a single click directly from Slic3r: this is a handy workflow for people using Slic3r together with the popular web-based print server. Configuration is very easy thanks to the Bonjour autodiscovery.</p>
+
+<p><img src="08.jpg" alt="" /></p>
+
+<p><img src="09.jpg" alt="" /></p>
+
+<h2 id="rotate-mirror-scale-flip">Rotate/mirror/scale/flip</h2>
+
+<p>Thanks to a contextual menu, objects can be manipulated in all axes (X/Y/Z) before slicing or before exporting the transformed object. Slic3r is now a handy graphical tool for manipulating STL files.</p>
+
+<p><img src="10.jpg" alt="" /></p>
+
+<h2 id="xy-size-compensation-option">XY Size Compensation option</h2>
+
+<p>In order to <strong>fight dimensional issues</strong>, a new option was added like in most CNC/CAM applications. If you find a dimensional error in a printed object, just measure the error and put the negative value in this option: Slic3r will compensate for it. For more information, please <a href="http://manual.slic3r.org/troubleshooting/dimension-errors">read this manual page</a>.</p>
+
+<h2 id="many-more-advanced-options">Many more advanced options</h2>
+
+<p>Advanced users have much more control over their prints thanks to several new tunable options, including extruders for support material and interface support material, contact distance between support material and object, infill/perimeters overlap.</p>
+
+<h2 id="autospeed">Autospeed</h2>
+
+<p>This is an experimental feature that, as often happened in the past, Slic3r is introducing in the 3D printing world. The purpose of this feature is to <strong>keep volumetric speed constant</strong> (thus, <strong>nozzle pressure</strong> too) throughout the print. The sudden pressure changes during the print, which are caused by print speed changes and by different extrusion widths (we like to use thin widths for external perimeters but fat infill, for example) often cause visible quality drop because there&rsquo;s a delay. This problem is very visible in printers having a Bowden extruder or when using soft filaments. Several strategies were tried in the past, including the advance algorithm in several firmware projects, and even a Pressure Regulation feature in Slic3r itself. But this new autospeed feature uses a different approach: it chooses the head speed automatically in order to keep volumetric speed constant. This will cause no pressure change inside the extruder, thus no delay.</p>
+
+<p>Help testing and provide feedback!</p>
+
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            <div class="sidebar_box">
+                <h4>Blog archive:</h4>
+
+                <ul>
+                    
+                    <li>
+                        <a href="/blog/new-stable-1.2.9/">Announcing a new stable release: 1.2.9</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/modifier-meshes/">Tutorial: modifier meshes</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/1.5-years-of-slic3r-development/">1.5 years of Slic3r development</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/tip-handling-large-models/">Tip: handling large models</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/tip-bowden-extruders/">Tip: printing with Bowden extruders</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/tip-printing-vases/">Tip: printing vases</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/present-and-future-of-slic3r/">3D printing - present and future of Slic3r</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/a-not-so-short-talk-with-josef-prusa/">A (not so short) talk with Josef Prusa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/here-and-there-in-the-slic3r-community/">Here and there in the Slic3r community</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/the-birth-of-a-slic3r-community/">The birth of a Slic3r community</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+
+			
+		</div>
+		<div class="bottom"></div>
+	</div>
+	
+	<div id="footer" class="page">
+		<p>Slic3r is licensed under the GNU Affero General Public License, version 3<br />
+		    The Slic3r icon was designed by <a href="http://twitter.com/cdugd/">Corey Daniels</a></p>
+		<div class="clear"></div>
+	</div>
+	
+</body>
+</html>

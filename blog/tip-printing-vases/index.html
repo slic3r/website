@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>  
+	<title>Slic3r - Tip: printing vases</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" type="application/rss+xml" title="Slic3r RSS feed" href="/rss" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+	<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/tan-pink.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.tools.js"></script>
+	<script type="text/javascript" src="/javascripts/fancybox/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="/javascripts/site.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			
+			$("a.screenshot").fancybox({
+			    openEffect	: 'elastic',
+    	        closeEffect	: 'elastic',
+    	        helpers : {
+    		        title : {
+    			        type : 'inside'
+    		        }
+    	        },
+				'overlayShow'	:	false,
+				'beforeLoad'    : function() {
+                    var el, id = $(this.element).data('title-id');
+                    if (id) {
+                        el = $('#' + id);
+                        if (el.length) {
+                            this.title = el.html();
+                        }
+                    }
+                }
+			});
+
+			
+			$(".scrollable").scrollable({ });
+		});
+	</script>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <link type="text/css" href="/inc/jquery/css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div id="header">
+		<div class="page">
+			
+			<a href="/" class="logo"><span>Slic3r</span></a>
+			<div id="subtitle">G-code generator for 3D printers</div>
+			
+			<ul>
+			    <li><a href="/">Home</a></li>
+			    <li><a href="/about">About</a></li>
+			    <li><a href="/download">Download</a></li>
+			    <li><a href="http://manual.slic3r.org/" style="color: red">The Manual</a></li>
+			    
+			        <li><a href="/blog/new-stable-1.2.9/">Blog</a></li>
+			    
+			    <li><a href="/donations">Donate</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div id="page">
+				
+		<div class="top"></div>
+		<div class="content">
+			
+			
+
+    <div class="header page">
+        <h1>
+            Tip: printing vases
+        </h1>
+    </div>
+    
+    <div id="blog" class="padding">
+        <div class="left">
+            <div class="post">
+                <span class="meta">Posted by Alessandro Ranellucci on 2013-03-24</span>
+                <div class="content">
+                    <p>The <em><strong>Top solid layers</strong></em> option in Slic3r allows to print vases from simple solid models. This means that you don&rsquo;t need to hollow out your models manually, which can be a timeconsuming task and often requires features that basic modeling packages don&rsquo;t offer.</p>
+
+<p>The trick is just to set <em><strong>Top solid layers</strong></em> to 0 and <em><strong>Infill density</strong></em> to 0 - voila, your solid will be printed with just its sides and the bottom surface.</p>
+
+<p>You can then use the <em><strong>Bottom solid layers</strong></em> and <em><strong>Perimeters</strong></em> options to define the thickness of the bottom and the walls of your vase (note that this allows to change such thickness at print time without having to change it in the original model).</p>
+
+<p>This trick also enables <strong>faster slicing</strong>, because Slic3r won&rsquo;t need to use its thinwall/medial axis algorithm to collapse the walls into single traces.</p>
+
+<p>So, when you find that sexy vase on Thingiverse be sure to check whether a solid version is available - if so, use that instead of the one that is already hollowed out (for example, the <a href="http://www.thingiverse.com/thing:42570">Twisted Heart Vase</a> provides both). If not, you can use a tool like <a href="http://meshlab.sourceforge.net/">Meshlab</a> or <a href="http://www.netfabb.com/download.php">Netfabb Studio Basic</a> to fill the holes like I did for the <a href="http://www.thingiverse.com/thing:33344">Tornado</a>.</p>
+
+<p><img src="01.jpg" alt="" /> <img src="02.jpg" alt="" /></p>
+
+<p>If you ever decide to print a single-walled vase (i.e. with <em>Perimeters</em> set to 1) you can also benefit from the <strong><em>Spiral Vase</em></strong> setting which will raise Z continuously avoiding a layer-change point which would cause a visible seam. This setting works with any number of bottom solid layers.</p>
+
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            <div class="sidebar_box">
+                <h4>Blog archive:</h4>
+
+                <ul>
+                    
+                    <li>
+                        <a href="/blog/new-stable-1.2.9/">Announcing a new stable release: 1.2.9</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/modifier-meshes/">Tutorial: modifier meshes</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/1.5-years-of-slic3r-development/">1.5 years of Slic3r development</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/tip-handling-large-models/">Tip: handling large models</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/tip-bowden-extruders/">Tip: printing with Bowden extruders</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/tip-printing-vases/">Tip: printing vases</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/present-and-future-of-slic3r/">3D printing - present and future of Slic3r</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/a-not-so-short-talk-with-josef-prusa/">A (not so short) talk with Josef Prusa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/here-and-there-in-the-slic3r-community/">Here and there in the Slic3r community</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/the-birth-of-a-slic3r-community/">The birth of a Slic3r community</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+
+			
+		</div>
+		<div class="bottom"></div>
+	</div>
+	
+	<div id="footer" class="page">
+		<p>Slic3r is licensed under the GNU Affero General Public License, version 3<br />
+		    The Slic3r icon was designed by <a href="http://twitter.com/cdugd/">Corey Daniels</a></p>
+		<div class="clear"></div>
+	</div>
+	
+</body>
+</html>

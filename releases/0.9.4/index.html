@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>  
+	<title>Slic3r - 0.9.4</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" type="application/rss+xml" title="Slic3r RSS feed" href="/rss" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+	<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/tan-pink.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.tools.js"></script>
+	<script type="text/javascript" src="/javascripts/fancybox/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="/javascripts/site.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			
+			$("a.screenshot").fancybox({
+			    openEffect	: 'elastic',
+    	        closeEffect	: 'elastic',
+    	        helpers : {
+    		        title : {
+    			        type : 'inside'
+    		        }
+    	        },
+				'overlayShow'	:	false,
+				'beforeLoad'    : function() {
+                    var el, id = $(this.element).data('title-id');
+                    if (id) {
+                        el = $('#' + id);
+                        if (el.length) {
+                            this.title = el.html();
+                        }
+                    }
+                }
+			});
+
+			
+			$(".scrollable").scrollable({ });
+		});
+	</script>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <link type="text/css" href="/inc/jquery/css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div id="header">
+		<div class="page">
+			
+			<a href="/" class="logo"><span>Slic3r</span></a>
+			<div id="subtitle">G-code generator for 3D printers</div>
+			
+			<ul>
+			    <li><a href="/">Home</a></li>
+			    <li><a href="/about">About</a></li>
+			    <li><a href="/download">Download</a></li>
+			    <li><a href="http://manual.slic3r.org/" style="color: red">The Manual</a></li>
+			    
+			        <li><a href="/blog/new-stable-1.2.9/">Blog</a></li>
+			    
+			    <li><a href="/donations">Donate</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div id="page">
+				
+		<div class="top"></div>
+		<div class="content">
+			
+			
+
+    <div class="header page">
+        <h1>
+            Release notes for <b>0.9.4</b> <small>(2012-11-04)</small>
+            
+        </h1>
+    </div>
+    
+    <div class="padding">
+        <div class="left">
+            
+
+<h4 id="new-features">New features:</h4>
+
+<ul>
+<li>ability to <strong>fill small gaps</strong> using multiple automatic extrusion widths</li>
+<li><strong>object information</strong> is displayed when double-clicking on an item in the plater</li>
+<li>independently set <strong>number of top/bottom solid layers</strong></li>
+<li>descriptive textual feedback for cooling settings</li>
+<li>allow _[print_center<em>X]</em> and _[print_center<em>Y]</em> syntax for all coordinates settings (including bed_center etc.) and _[temperature<em>0]</em>, _[temperature<em>1]</em> etc. for all index-based settings</li>
+<li>new _min_skirt<em>length</em> option to ensure that the specified amount of filament is always consumed while extruding skirt</li>
+<li>(experimental) make a little move inwards by 30° before leaving the last perimeter loops</li>
+</ul>
+
+<h4 id="improvements">Improvements:</h4>
+
+<ul>
+<li><strong>dual-extruder printing</strong> was tested and heavily improved</li>
+<li>if brim overlaps with skirt, make brim around skirt too instead of just skipping skirt on bottom layer</li>
+<li>paths are much smoother, without any artifacts</li>
+<li>useless extra perimeters were generated sometimes</li>
+<li>speed improvements</li>
+<li>make external perimeter first on bottom layer when brim is enabled</li>
+<li>distribute skirt loops among all extruders</li>
+<li>remember last used filaments when using multiple extruders too</li>
+<li>use a faster XML parser for AMF if available</li>
+<li>don&rsquo;t apply slowdown factor to bridges</li>
+<li>make a slightly thinner interface layer at the top of support material (nophead&rsquo;s idea)</li>
+<li>expose perimeter/infill/support material extrusion widths in G-code comments</li>
+</ul>
+
+<h4 id="changes">Changes:</h4>
+
+<ul>
+<li>bottom layer infill is not taken into account for combination</li>
+<li>use G92 to apply Z offset</li>
+</ul>
+
+<h4 id="bugfixes">Bugfixes:</h4>
+
+<ul>
+<li>tool number written in multi-extruder G-code were wrong</li>
+<li>the Split button didn&rsquo;t work anymore</li>
+<li>first layer extrusion width was ignored for skirt and sometimes for other parts too</li>
+<li>the copies number was not updated when decreasing parts in the plater</li>
+<li>honeycomb infill was overlapping too much with perimeters</li>
+<li>the plater was merging all materials into a single-material print</li>
+<li>worked around a wxWidgets issue causing the last changed setting in the GUI to be ignored when saving the preset</li>
+<li>bed temperature wasn&rsquo;t being set after the first layer when first layer bed temperature was set to zero</li>
+<li>fixed regression causing one perimeter to be generated even when perimeters were set to 0</li>
+<li>fixed regression causing too much clipping at the endpoints of loops</li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            <div class="sidebar_box">
+                <h4>Release notes:</h4>
+
+<ul>
+    
+    <li>
+        <a href="/releases/1.2.9/">1.2.9</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.8/">1.2.8</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.7/">1.2.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.6/">1.2.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.5/">1.2.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.4/">1.2.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.3/">1.2.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.2/">1.2.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.1/">1.2.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.7/">1.1.7</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.0/">1.2.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.6/">1.1.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.5/">1.1.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.4/">1.1.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.3/">1.1.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.2/">1.1.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.0.1/">1.0.1</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.1/">1.1.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.0.0/">1.0.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.0/">1.1.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.10b/">0.9.10b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.9/">0.9.9</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.8/">0.9.8</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.7/">0.9.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.5/">0.9.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.4/">0.9.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.3/">0.9.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.2/">0.9.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.1/">0.9.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.0/">0.9.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.4/">0.8.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.3/">0.8.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.1/">0.8.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.2/">0.8.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.2b/">0.7.2b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.2/">0.7.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.1/">0.7.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.0/">0.7.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.6.0/">0.6.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.7/">0.5.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.6/">0.5.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.5b/">0.5.5b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.4/">0.5.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.3/">0.5.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.2/">0.5.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.1/">0.5.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.0/">0.5.0</a>
+        
+    </li>
+    
+</ul>
+
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+
+			
+		</div>
+		<div class="bottom"></div>
+	</div>
+	
+	<div id="footer" class="page">
+		<p>Slic3r is licensed under the GNU Affero General Public License, version 3<br />
+		    The Slic3r icon was designed by <a href="http://twitter.com/cdugd/">Corey Daniels</a></p>
+		<div class="clear"></div>
+	</div>
+	
+</body>
+</html>

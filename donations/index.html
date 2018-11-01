@@ -1,0 +1,582 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>  
+	<title>Slic3r - Donations</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" type="application/rss+xml" title="Slic3r RSS feed" href="/rss" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+	<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/tan-pink.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.tools.js"></script>
+	<script type="text/javascript" src="/javascripts/fancybox/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="/javascripts/site.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			
+			$("a.screenshot").fancybox({
+			    openEffect	: 'elastic',
+    	        closeEffect	: 'elastic',
+    	        helpers : {
+    		        title : {
+    			        type : 'inside'
+    		        }
+    	        },
+				'overlayShow'	:	false,
+				'beforeLoad'    : function() {
+                    var el, id = $(this.element).data('title-id');
+                    if (id) {
+                        el = $('#' + id);
+                        if (el.length) {
+                            this.title = el.html();
+                        }
+                    }
+                }
+			});
+
+			
+			$(".scrollable").scrollable({ });
+		});
+	</script>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <link type="text/css" href="/inc/jquery/css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div id="header">
+		<div class="page">
+			
+			<a href="/" class="logo"><span>Slic3r</span></a>
+			<div id="subtitle">G-code generator for 3D printers</div>
+			
+			<ul>
+			    <li><a href="/">Home</a></li>
+			    <li><a href="/about">About</a></li>
+			    <li><a href="/download">Download</a></li>
+			    <li><a href="http://manual.slic3r.org/" style="color: red">The Manual</a></li>
+			    
+			        <li><a href="/blog/new-stable-1.2.9/">Blog</a></li>
+			    
+			    <li><a href="/donations">Donate</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div id="page">
+				
+		<div class="top"></div>
+		<div class="content">
+			
+			
+
+    <div class="header page">
+        <h1>Donations</h1>
+    </div>
+    
+    <div class="padding">
+        <div class="left">
+            
+
+<h2 id="why-donations">Why donations?</h2>
+
+<p>Slic3r is almost a <strong>one-man job</strong>. I started this project in September 2011 and it&rsquo;s now very well-known and used by thousands people all around the world. I spent much time on development: it was more or less a <strong>part-time job</strong> for me. I&rsquo;m a freelance developer, and reserving time for such a project has costs for me.</p>
+
+<p><a href="https://www.openhub.net/p/slic3r/estimated_cost">OpenHub estimates</a> the total cost of having developed Slic3r so far (although this has to be taken with a pinch of salt) at <em>more than $500k</em>, with an estimated effort of 8 year/man. This is probably too much, but you get the idea. I could have kept the code closed and started selling licenses, but I decided to <strong>share my work</strong> with the community.</p>
+
+<p>In the RepRap community, many people cover their costs by selling hardware. They honor the free software licenses, by publishing their designs, but they can also sell material things (kits, printed parts, hotends, heated beds, electronics etc.) to fund and continue their research. Software developers&hellip; well, they can&rsquo;t sell anything :-)</p>
+
+<p>I believe that building a new, fast, flexible, easy to use slicer is a fundamental contribution for the whole RepRap project. It also gives a boost to companies selling kits and printers.</p>
+
+<h2 id="what-will-donations-be-used-for">What will donations be used for?</h2>
+
+<p>I only use donations to fund my RepRap-related expenses. Plastic, for example, which is necessary to test a slicer, and new hot-ends to ensure hardware compatibility.</p>
+
+<h2 id="benefits-of-donating">Benefits of donating</h2>
+
+<ul>
+<li>Your donation will be acknowledged in this website (unless you ask not to be listed)</li>
+<li>A warm fuzzy feeling inside, knowing that your donation is helping a good project ;)</li>
+</ul>
+
+<h2 id="can-i-become-a-corporate-sponsor">Can I become a corporate sponsor?</h2>
+
+<p>Sure. I&rsquo;m open to anything that complies with Slic3r&rsquo;s free software license and with the interest of the project. Contact me and let&rsquo;s talk about your offer.</p>
+
+<h2 id="do-i-get-tax-relief-on-these-donations">Do I get tax relief on these donations?</h2>
+
+<p>No, I&rsquo;m not a registered charity so donations are not tax-deductable in any juristictions I&rsquo;m aware of.</p>
+
+<h2 id="list-of-donors">List of donors</h2>
+
+<p>The following people and companies kindly made a donation (money or hardware):</p>
+
+<ul>
+<li>Rick Pollack (<a href="http://www.makergear.com/">MakerGear.com</a>)</li>
+<li>Brendan Erwin</li>
+<li>Leif Gutmann</li>
+<li>Camiel Gubbels (<a href="http://www.mendel-parts.com/">mendel-parts.com</a>)</li>
+<li>Chris Dieringer</li>
+<li>James Hardiman</li>
+<li>Ruben Lubbes (<a href="http://www.ikmaak.nl/">ikmaak.nl</a>)</li>
+<li>Martin Schögler</li>
+<li>John Ridley</li>
+<li>Joachim Glauche (<a href="http://www.reprapsource.com/">reprapsource.com</a>)</li>
+<li>Richard Goodwin</li>
+<li>Deejay Scharton (<a href="http://www.dslrfilmnoob.com/">dslrfilmnoob.com</a>)</li>
+<li>Cory Barrick</li>
+<li>Nathaniel Graham (<a href="http://www.techpaladin.com/">techpaladin.com</a>)</li>
+<li>David Christal</li>
+<li>codeXmas Consulting Ltd.</li>
+<li>Kim Jacobsen</li>
+<li>David Casey</li>
+<li>Nudel (<a href="http://repraprip.blogspot.com/">repraprip.blogspot.com</a>)</li>
+<li>Paolo Cirillo Martini</li>
+<li>Michael Andresen (<a href="http://captain-slow.dk/">captain-slow.dk</a>)</li>
+<li>William Swinyard (<a href="http://protovision.com/">protovision.com</a>)</li>
+<li>Lorenzo Cantini (<a href="http://kentstrapper.blogspot.com/">kentstrapper.blogspot.com</a>)</li>
+<li>Marco Biacca</li>
+<li>Keith Cassidy</li>
+<li>Mauro Carriero</li>
+<li>Christopher Jansen (<a href="http://jansenbrothers.com/">jansenbrothers.com</a>)</li>
+<li>David Ostby</li>
+<li>Hawkinsoft LLC</li>
+<li>Faberdashery Ltd. (<a href="http://www.faberdashery.co.uk/">www.faberdashery.co.uk</a>)</li>
+<li>Rob Raijmakers (<a href="http://www.openhardwarestore.com/">www.openhardwarestore.com</a>)</li>
+<li>Emmanuel Gilloz (<a href="http://watsdesign.blogspot.com/">watsdesign.blogspot.com</a>)</li>
+<li>Charlie Martin</li>
+<li>Brian Beebe</li>
+<li>Robert Gusek</li>
+<li>Fabio Primaio</li>
+<li>Devin McPherson</li>
+<li>Benjamin Wade</li>
+<li>Paul Brown</li>
+<li>Cory Barrick</li>
+<li>Jacob Poznanski</li>
+<li>Toni Baier</li>
+<li><em>anonymous donor</em></li>
+<li>Michael Heidger</li>
+<li><em>anonymous donor</em></li>
+<li>Mark Dufour</li>
+<li>Michael Moon&nbsp;<a href="http://create3d.com.au/">create3d.com.au</a></li>
+<li>Rhys Jones</li>
+<li>Ken Cofer</li>
+<li>General and Electronics Merchandise Supply and Distribution</li>
+<li>Anderson De Figueiredo Cunha</li>
+<li>Adrian Coysh</li>
+<li>Ben Howes</li>
+<li>Arthur Wolf</li>
+<li>Laszlo Krekacs&nbsp;<a href="http://shop.arcol.hu/">shop.arcol.hu</a></li>
+<li>David Deyoung</li>
+<li>Ian Stratford</li>
+<li>Richard Eagland</li>
+<li>Paul Bitmatta</li>
+<li><a href="http://phlatboyz.com/">Phlatboyz.com</a></li>
+<li>Robert Gusek</li>
+<li>David Carley</li>
+<li>Sublime Kustoms</li>
+<li>Buildlog.net LLC&nbsp;<a href="http://buildlog.net/">Buildlog.net</a></li>
+<li>German RepRap Foundation&nbsp;<a href="http://grrf.de/">grrf.de</a></li>
+<li>Walter Gordy</li>
+<li>Blackpoint Engineering, LLC</li>
+<li>Pascal Bettingers</li>
+<li>Giulia Vianello</li>
+<li>Michael Freeman&nbsp;<a href="http://mikes-models.com/">mikes-models.com</a></li>
+<li>Christopher Muncy</li>
+<li>Andrew Barton</li>
+<li>Travis Howse</li>
+<li>Johannes Heberlein</li>
+<li>Maik Stohn</li>
+<li>Hugh Lyman</li>
+<li>Torben Kinnert</li>
+<li>Enrico Paccagnella</li>
+<li>Mick Balaban</li>
+<li>General and Electronics Merchandise Supply and Distribution</li>
+<li>Bruce Rohde</li>
+<li>Roberto Previdi</li>
+<li>Sonia Margulis</li>
+<li>Adam Herring</li>
+<li>David Bue Pedersen</li>
+<li>Thomas Dawson</li>
+<li>Jochem Van De Pol</li>
+<li>Eric Connolly</li>
+<li>ProtoParadigm LLC</li>
+<li>David Hoza</li>
+<li>Tim Parth</li>
+<li>Christoph Albiez</li>
+<li>Mark Hindess</li>
+<li>Adolf Nefischer</li>
+<li>Paolo Formenti</li>
+<li>INFOLUTION.net e.K.</li>
+<li>DIY Tech Shop LLC</li>
+<li>Tim Parth</li>
+<li>David Raphael</li>
+<li>Bennett Christman</li>
+<li>Jorn Claassens</li>
+<li>Willem Van den Eynde</li>
+<li>Ralf Neumann EDV Service</li>
+<li>Bob Clough</li>
+<li>Adam Herring (<a href="http://www.fabberforge.com/">www.fabberforge.com</a>)</li>
+<li>Anderson de Figueiredo Cunha</li>
+<li>Vision Engineering Services ltd</li>
+<li>Homer Lee</li>
+<li>Miguel Angel Peinado Peinado</li>
+<li>Johann Rocholl (Rostock - <a href="http://deltabot.tumblr.com/">deltabot.tumblr.com</a>)</li>
+<li>Rogier Visser</li>
+<li>Alexander Zlobin</li>
+<li>Damian Schneider</li>
+<li>David Pye</li>
+<li>Scott Warren</li>
+<li>Kirk Garrison</li>
+<li>Maik Stohn</li>
+<li>Cory Barrick</li>
+<li>Constantin Weiss</li>
+<li>Matt Woods</li>
+<li>Steeve Becker</li>
+<li>Miguel Oliveira</li>
+<li>Thomas Ziegler</li>
+<li>Xavier Francisco Flores Mendoza</li>
+<li><a href="http://www.reprapdiscount.com/">RepRapDiscount.com</a></li>
+<li>Blackpoint Engineering, LLC</li>
+<li>Jonathan Jopse</li>
+<li>Ahmet TURAN</li>
+<li>Richard Horne (<a href="http://richrap.blogspot.com/">richrap.blogspot.com</a>)</li>
+<li>Jonathan Sorensen</li>
+<li>Mike Kouri</li>
+<li>William Fischer</li>
+<li>Michael Cunningham</li>
+<li>Warren Strome</li>
+<li><a href="http://deezmaker.com">Deezmaker</a></li>
+<li>Dwayne Dilbeck</li>
+<li>Karl Paranya</li>
+<li>Peter Archer</li>
+<li>Walter Jann</li>
+<li>Michael Boehk</li>
+<li>Vincent Parmentier</li>
+<li>Bradford Norman</li>
+<li>Martin Galese</li>
+<li>Guillaume Revaillot</li>
+<li>Phillip Jam</li>
+<li>Octavio Nogueira</li>
+<li>Jeremy Harrison</li>
+<li>Brooke Hedrick</li>
+<li>Brad Dudenhoffer Photography</li>
+<li>Tom Forrer</li>
+<li>Michal Feherpataky</li>
+<li>Phil Lankford</li>
+<li>Thomas Rogers</li>
+<li>Gunter Hannig</li>
+<li>Elmar Schwanz</li>
+<li>Ben Fabry</li>
+<li>John Heritage</li>
+<li>Taylor Alexander</li>
+<li>Zip-Bit, Inc.</li>
+<li>Gerald Anzalone</li>
+<li>Christer Vestermark</li>
+<li>Andreas Herz</li>
+<li>Stefan Toubia</li>
+<li>Thomas Sanladerer</li>
+<li>Frank Omloo</li>
+<li>Marcus Wilson</li>
+<li>Alberto Valero Gomez</li>
+<li>Joachim Renner</li>
+<li>Damian Szewczyk</li>
+<li>Toby Thornton</li>
+<li>Len Trigg</li>
+<li>Frederic Defoy</li>
+<li>Frank Helmschrott</li>
+<li><em>anonymous donor</em></li>
+<li>Roman Hegglin</li>
+<li>Imp. Inc. Ltd</li>
+<li>Kelvin Shirley</li>
+<li>Kirk Yarina</li>
+<li>Tomek Brzezinski</li>
+<li>Terry Morris</li>
+<li>Phillip Bond</li>
+<li>James Baum</li>
+<li>Dmitry Gritskevich</li>
+<li>Robert Fairlie-Cuninghame</li>
+<li>David Riesenberg</li>
+<li>Blackpoint Engineering, LLC</li>
+<li>Julien Barbier</li>
+<li>Antonio Visone</li>
+<li>Mike Zierke</li>
+<li>Andrew Lautner</li>
+<li>Adam Archibald</li>
+<li>Randolph Smith</li>
+<li>Brad Hill</li>
+<li><a href="http://www.fabberworld.com/">fabberworld.com</a></li>
+<li>Warren Bailey</li>
+<li>Charles Braquet</li>
+<li>Stickygirls</li>
+<li>Bernd Pareiss</li>
+<li>Alessandro Severini</li>
+<li>Travis Howse</li>
+<li><a href="http://www.igo3d.com/">iGo3D.com</a></li>
+<li>Paul Poirier</li>
+<li>Robert Zimrot</li>
+<li>Mark Benson</li>
+<li>Hendrik Sabert</li>
+<li>Raptor-RD Corp &amp; Robotica by MVP Tecnologies</li>
+<li>Michael Dawson</li>
+<li>Bertrand Achard</li>
+<li>Ulrich Neumann</li>
+<li>Anton Gillert</li>
+<li>Sidarth Dasari</li>
+<li>Ted Fisher</li>
+<li>Octavio Nogueira</li>
+<li>Toni Baier</li>
+<li>Dale Rooney</li>
+<li>Richard Zehr</li>
+<li>Terry Phillips</li>
+<li>Paul Poirier</li>
+<li>Alberto Valero Gomez</li>
+<li>Sean Mitchell</li>
+<li>Nathaniel Garst</li>
+<li>John Smith</li>
+<li>Guy Parsons</li>
+<li>Benjamin Malouf</li>
+<li>Glen Hewlett</li>
+<li>Tarek Loubani</li>
+<li>Nicholas Harper</li>
+<li>Hugh Lyman</li>
+<li>Rob Partlow</li>
+<li>Sebastiaan Willem Spaans</li>
+<li>Michael Black</li>
+<li>Richard Dehue</li>
+<li>Jay Couture</li>
+<li>Fortino Tan</li>
+<li>Mark James</li>
+<li>Sebastian Karpp</li>
+<li>Martin Roessler</li>
+<li><a href="http://www.Plastic2Print.com">Plastic2Print</a></li>
+<li>Laura Thomas</li>
+<li>Maximilian Sachs</li>
+<li>Adam Richards</li>
+<li>James Hughes</li>
+<li>Juergen Klanert</li>
+<li>Eugene Bodrero</li>
+<li>Bryon Donohoe</li>
+<li>Arnoud Jagerman</li>
+<li>Frank Omloo</li>
+<li>Jaime Samayoa</li>
+<li>Ulrich Neumann</li>
+<li>Tam Labs LLC</li>
+<li>Karen Nakamura</li>
+<li>Stephan Seitz</li>
+<li>Sean Mitchell</li>
+<li>Rick Hisel</li>
+<li>Robert Zimrot</li>
+<li>Attila Nagy</li>
+<li>Anthony Willey</li>
+<li>David Varley</li>
+<li>T W Woodworks</li>
+<li>Ronald Buerger</li>
+<li>Thaltech</li>
+<li>Michael Dawson</li>
+<li>Bernard Penders ldv sprl</li>
+<li>RepRap Diffusion</li>
+<li>William Bond</li>
+<li><a href="http://www.deltamaker.com/">DeltaMaker</a></li>
+<li>Robert Givens</li>
+<li>Marcelo Ruiz Camauer</li>
+<li>Rick Bruce</li>
+<li>Pierre Buyle</li>
+<li>Caytlin Green</li>
+<li>Saeed Darabi</li>
+<li>Ray Reese</li>
+<li>Jürgen Lochner</li>
+<li>Helmi BEN REJEB</li>
+<li>Suigeneris</li>
+<li>Christian Kraft</li>
+<li>Miroslav Mandov</li>
+<li>Michael Carnright</li>
+<li>Shaun Pullen</li>
+<li>Giuseppe Merola</li>
+<li>Alex Pearson</li>
+<li>Zip-Bit, Inc.</li>
+<li>Ronald Gillis</li>
+<li>Hari Wiguna</li>
+<li>Vladimir Weinstein</li>
+<li>Hamilton Davies</li>
+<li>Jake Bordens</li>
+<li>William Owens</li>
+<li>Stand Up Clothing</li>
+<li>LAB 3 Consulting</li>
+<li>Dana Gregory</li>
+<li><a href="http://www.printrbot.com/">Printrbot, Inc.</a></li>
+<li><a href="http://www.plastibot.com/">Plastibot, LLc</a></li>
+<li>Steve Musante</li>
+<li>Kevin Pate</li>
+<li>Aaron Birenboim</li>
+<li><a href="http://www.voxelfactory.com/">Voxel Factory</a></li>
+<li>Bernd Pareiss</li>
+<li>Jose Maria Lopez Orriols</li>
+<li>Pablo Otón Zamora</li>
+<li>John King</li>
+<li>Filimonchuk Dmitry</li>
+<li>Benoit Cardinet</li>
+<li>David Da Costa</li>
+<li><a href="http://www.openbuilds.com/">OpenBuilds Part Store</a></li>
+<li>Iñaki Olarreaga</li>
+<li><a href="http://www.voltivo.com/">Voltivo Group Ltd.</a></li>
+<li>RTC Marketing Group LLC</li>
+<li>Martin Lauber</li>
+<li>Sebastian Lauster</li>
+<li>Frank Piesik</li>
+<li>Blackpoint Engineering, LLC</li>
+<li>Andrew Gierens</li>
+<li>Hawkinsoft LLC</li>
+<li>Marco Antonini</li>
+<li>Robert S Wulff</li>
+<li>Roman Batz</li>
+<li>Dave Galietti</li>
+<li>Andreev Aleksandr</li>
+<li>Jakub Husak</li>
+<li>John Cooper</li>
+<li>Jakub Husak</li>
+<li>Benoît Terradillos</li>
+<li>Andrew McNelly</li>
+<li>Bernd Pereiss</li>
+<li>Rainer Lietz</li>
+<li>Flint Hamblin</li>
+<li>Jeffrey Williams</li>
+<li>Paul Applegate</li>
+<li>Brent Burton</li>
+<li>Sverrir Fannar Einarsson</li>
+<li>Johannes Eder</li>
+<li>Christopher Jung</li>
+<li>Rodney Loschiavo</li>
+<li>Winold Doege</li>
+<li>Carl Feniak</li>
+<li>Andrew Harmon</li>
+<li>Jim Connolly</li>
+<li>Warren Taylor</li>
+<li>Chris Kopack</li>
+<li>Octavio Nogueira</li>
+<li>William Graham</li>
+<li>Damion Smith</li>
+<li>Mark Hindess</li>
+<li>Patrick Pirtle</li>
+<li>Meir Ben Simon</li>
+<li><a href="http://www.seemecnc.com/">SeeMeCNC</a></li>
+<li>Daniel Robert</li>
+<li>MR P A Samwell-Smith</li>
+<li>Peter Smith</li>
+<li>Jim Greenhaw</li>
+<li>Denis Weber</li>
+<li>Active 3D Printers ltd</li>
+<li>Yves Dubois</li>
+<li>Carlos Santos Illana</li>
+<li>Karl Gifford</li>
+<li>Zeev Wolfson</li>
+<li>Paulo Pires Silva</li>
+<li>Michael Bruch</li>
+<li>DIY Tech Shop LLC</li>
+<li><a href="/edit/e-software-license.com">e-software-license.com</a></li>
+<li>Christoph Strasser</li>
+<li>Arno Millenaar</li>
+<li>Robert Condon</li>
+<li>Kozlov Andrey</li>
+<li><a href="http://www.systemsandmagic.com">Systems and Magic</a> di Roberto Amato</li>
+<li>Dave Brown</li>
+<li>Guido Schaniel</li>
+<li>Marc Crescenti Savall</li>
+<li>Ben Brown</li>
+<li>Brian Hockenmaier</li>
+<li>Michael Migranyan</li>
+<li>Henny Ribbink</li>
+<li>Terry Sommariva</li>
+<li>Erik Pettersson</li>
+<li>Bryan Ribas</li>
+<li>Garry Bartsch</li>
+<li>Markus Kosmann</li>
+<li>Daniel Young</li>
+<li>Sergey Pavlov</li>
+<li>Marnix Arnold</li>
+<li>Wout Zweers</li>
+<li>David Mikulski</li>
+<li>Jet Cubed</li>
+<li>Andre Schaefer</li>
+<li>Mark Rasmussen</li>
+<li>Edwin Joassart</li>
+<li>Carl Quinn</li>
+<li>Theodoros Pantelaros</li>
+<li>Tisbury Audio</li>
+<li>Francesco Rampoldi</li>
+<li>Добровский Михаил</li>
+<li>Mathias Paruzel</li>
+<li>Christian Rammelmüller</li>
+<li>Bruce Murray</li>
+<li>NOLA Vape, L.L.C.</li>
+<li>Reper Eric</li>
+<li>James K Rivera</li>
+<li>Davide Ardizzoia</li>
+<li>Kjetil Vinorum</li>
+<li>ORD Solutions</li>
+<li>Michal Miszta</li>
+<li>Michael Weiss</li>
+<li>Jean-Yves MARHIC</li>
+<li>Fabian Schmid-Michels</li>
+<li>Helvia de Campos Moreira</li>
+</ul>
+
+<p>(Last update: 2013-12-28) - If your name is not listed, please excuse me and feel free to send a heads-up e-mail.</p>
+
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            
+            <div class="sidebar_box">
+                <h4>Donate with PayPal:</h4>
+
+<div style="padding: 15px 0">
+    <form style="margin-left: 20px" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="hosted_button_id" value="5VWJ863ZCTFYS">
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+</div>
+
+            </div>
+            
+            <div class="sidebar_box">
+                <h4>Premium donors</h4>
+
+<p>The following companies donated more than 1,000 EUR:</p>
+<div>
+    <ul>
+        <li><strong><a href="http://www.lulzbot.com/">LulzBot</a></strong></li>
+        <li><a href="http://www.reprapdiscount.com/"><strong>RepRapDiscount</strong></a></li>
+        <li><strong><a href="http://www.trinitylabs.com/">TrinityLabs</a></strong></li>
+        <li><a href="http://www.seemecnc.com/"><strong>SeeMeCNC</strong></a></li>
+        <li><a href="http://www.wasproject.it"><strong>WASP</strong></a></li>
+    </ul>
+    <p>These companies believe in open source software, and their funding supports the whole 3D printing community. Money is fully devoted to covering project expenses, or donated to other open source projects on which Slic3r relies, or used to fund the work of extra programmers or students.</p>
+</div>
+            </div>
+            
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+
+			
+		</div>
+		<div class="bottom"></div>
+	</div>
+	
+	<div id="footer" class="page">
+		<p>Slic3r is licensed under the GNU Affero General Public License, version 3<br />
+		    The Slic3r icon was designed by <a href="http://twitter.com/cdugd/">Corey Daniels</a></p>
+		<div class="clear"></div>
+	</div>
+	
+</body>
+</html>

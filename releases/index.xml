@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Releases on Slic3r</title>
+    <link>http://slic3r.org/releases/</link>
+    <description>Recent content in Releases on Slic3r</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 16 Jun 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://slic3r.org/releases/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>1.2.9</title>
+      <link>http://slic3r.org/releases/1.2.9/</link>
+      <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.2.9/</guid>
+      <description> Finally a new stable release!
+Dear Slic3r community: thank you for your support, testing, reports and love!
+For the whole list of changes and new features see this comprehensive blog post.
+Improvements:  Limit bridge over sparse infill to areas that can absorb such extrudate in case of thin layers (#2899) Adjustments to the thin wall logic for preventing small artifacts (#2910)  Changes:  The math applied to the Infill Overlap option was slightly changed  Bugfix:  Fixed more situations where filenames and presets with non-ASCII characters were not handled correctly (thanks Josef Prusa) Fixed regression causing some rare STL files not to be parsed correctly (#2914)  </description>
+    </item>
+    
+    <item>
+      <title>1.2.8</title>
+      <link>http://slic3r.org/releases/1.2.8/</link>
+      <pubDate>Mon, 08 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.2.8/</guid>
+      <description> More bugfixes. We want to make 1.2.x stable soon. Dear Slic3r community: thank you for your support, testing, reports and love!
+For the whole list of changes and new features see the release notes for 1.2.0, 1.2.1, 1.2.2, 1.2.3, 1.2.5, 1.2.6 and 1.2.7.
+New features:  Associate a color to each filament preset for quicker browsing New experimental autospeed feature that chooses speeds automatically in order to keep volumetric speed and nozzle pressure constant; just set all speeds to 0 to enable it (#2810) New Max Volumetric Speed config option A new _[currentextruder] placeholder is now available (#2866)  Improvements:  Nice menu item icons :o) When zooming in the 2D layers preview, zoom happens around mouse location When loading too large objects, fit them to build plate and warn user (#2853) Prompt user when trying to use 100% density with an infill pattern that does not support solid density Cmd+, opens Preferences (#2860) Prompt user when overwriting a G-code file during export (#2882)  Changes:  If the &amp;ndash;save command line option is called with no other config settings, the full default config is exported (#2110)  Bugfix:  Fixed more situations where filenames and presets with non-ASCII characters were not handled correctly Fixed one minor situation when gap infill was missing (#2560) Fixed plater views not being refreshed after completing the config wizard Fixed crashes on Linux (#2858 #2613) Fixed concurrency issue when changing the number of extruders leading to slow GUI refresh or crashes (#2863) Fixed concave vertices detection not working correctly for holes (#2857) Fixed STL parser for handling more kinds of broken models (#2471 #2842) Added an explicit close button to the About window as a workaround for lack of title bar in wxMSW and wxGTK (#2688) Fixed bad handling of files with non-ASCII names during OctoPrint upload (#2827) Fixed wrong number of raft layers generated in some situations (#2723) Fixed the Repeat Last Quick Slice command being affected by plater changes (#2016) Fixed small gaps between infill and perimeters when solid infill extrusion width is much thinner than internal infill extrusion width (#2895)  </description>
+    </item>
+    
+    <item>
+      <title>1.2.7</title>
+      <link>http://slic3r.org/releases/1.2.7/</link>
+      <pubDate>Sat, 23 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.2.7/</guid>
+      <description>More bugfixes. We want to make 1.2.x stable soon. Dear Slic3r community: thank you for your support, testing, reports and love!
+For the whole list of changes and new features see the release notes for 1.2.0, 1.2.1, 1.2.2, 1.2.3, 1.2.5 and 1.2.6.
+New features:  Added support for Machinekit G-code flavor. Pan &amp;amp; zoom with mouse in the 2D Layers preview.  Improvements:  Load files into GUI when supplied from command line along with the &amp;ndash;gui switch (#2644).</description>
+    </item>
+    
+    <item>
+      <title>1.2.6</title>
+      <link>http://slic3r.org/releases/1.2.6/</link>
+      <pubDate>Sat, 31 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.2.6/</guid>
+      <description>More bugfixes. We want to make 1.2.x stable soon.
+For the whole list of changes and new features see the release notes for 1.2.0, 1.2.1, 1.2.2, 1.2.3 and 1.2.5.
+New features:  New super-cool 3D preview for toolpaths! New option for Z distance between object and support material New option for custom G-code to be executed before each layer change (#2602) New option for customizing overlap between infill and perimeters (#2459) New &amp;ldquo;Set copies&amp;hellip;&amp;rdquo; command in the objects contextual menu (#2540)  Improvements:  Support OctoPrint instances not running on port 80 (#2530) Object parts can be selected also by clicking in the 3D scene Empty STL files are handled gracefully (#2557) Bed Shape configuration is available in Simple Mode too (#2574) Last selected page is remembered when switching Printer Settings profiles (#2568) Small artifacts in the STL file are removed so that they don&amp;rsquo;t propagate in perimeters (#2561 #2416)  Changes:  Some default values were changed.</description>
+    </item>
+    
+    <item>
+      <title>1.2.5</title>
+      <link>http://slic3r.org/releases/1.2.5/</link>
+      <pubDate>Thu, 08 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.2.5/</guid>
+      <description>More bugfixes. We want to make 1.2.x stable soon.
+For the whole list of changes and new features see the release notes for 1.2.0, 1.2.1, 1.2.2 and 1.2.3.
+New features:  New option for generating volumetric E values. (#1746) Each object in the plater can be exported individually by using a new &amp;ldquo;Export STL&amp;rdquo; command in its own contextual menu (right-click). (#2479) A button was added to test OctoPrint connectivity on the fly.</description>
+    </item>
+    
+    <item>
+      <title>1.2.4</title>
+      <link>http://slic3r.org/releases/1.2.4/</link>
+      <pubDate>Mon, 29 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.2.4/</guid>
+      <description>More bugfixes. We want to make 1.2.x stable soon.
+For the whole list of changes and new features see the release notes for 1.2.0, 1.2.1, 1.2.2 and 1.2.3.
+Improvements:  The Preferences window is now larger. (#2463)  Bugfix:  Fixed one problem with OctoPrint upload. (#2465) Fixed minor problems with 3D Honeycomb infill. Fixed one misalignment problem caused by auto-centering. (#2464) Fixed one crash caused by the recent new detection of downwards interfaces.</description>
+    </item>
+    
+    <item>
+      <title>1.2.3</title>
+      <link>http://slic3r.org/releases/1.2.3/</link>
+      <pubDate>Sun, 28 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.2.3/</guid>
+      <description>One more quick release with more bugfixes and one bonus feature.
+For the whole list of changes and new features see the release notes for 1.2.0, 1.2.1 and 1.2.2.
+New features:  Integration with OctoPrint: upload the G-code file directly to an OctoPrint device. We also have autodiscovery via Bonjour for easy configuration. (#1826)  Bugfix:  The Object Editor crashed because of the recent refactoring to the 3D preview API.</description>
+    </item>
+    
+    <item>
+      <title>1.2.2</title>
+      <link>http://slic3r.org/releases/1.2.2/</link>
+      <pubDate>Fri, 26 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.2.2/</guid>
+      <description>Thanks for the massive amount of feedback about all the new features in 1.2.0 (see release notes for the full list)!
+This release contains improvements and bug fixes. Help us testing it in order to make it stable.
+New features:  Objects can be selected and moved in the 3D view New experimental feature for Pressure Management based on the advance algorithm (#1203 #1677 #2018) New Solid Infill Extruder option for selecting the extruder to be used for solid infill (#618) Support Material interface layers are now generated also above the object&amp;rsquo;s top surfaces where support material, so that they can be printed with the interface extruder.</description>
+    </item>
+    
+    <item>
+      <title>1.2.1</title>
+      <link>http://slic3r.org/releases/1.2.1/</link>
+      <pubDate>Fri, 07 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.2.1/</guid>
+      <description>Thanks for the massive amount of feedback about all the new features in 1.2.0 (see release notes for the full list)!
+This release contains many bugfixes but also some large internal refactorings, so help us test it.
+Improvements:  A G92 E0 command is now always appended after G11 (#2201)  Changes:  The experimental option &amp;ndash;g0 was removed because no firmware implements G0 in a useful way.  Bugfix:  3D preview in Linux had visualization glitches because of faulty Z depth buffer (#2197) Changes in the extruder count were not propagating to the plater tab, thus making impossible to choose filament presets Enabling/disabling support material didn&amp;rsquo;t cause skirt to be recalculated in background Changing number of object copies didn&amp;rsquo;t cause skirt/brim to be recalculated in background GUI options weren&amp;rsquo;t enabled/disabled upon preset change 3D honeycomb was not nice as intended because truncated octahedrons were stretched vertically (#1646) 3D honeycomb didn&amp;rsquo;t honor Infill every &amp;lsquo;n&amp;rsquo; layers (#2194) 3D honeycomb wasn&amp;rsquo;t correctly aligned among skewed layers (#2194) Concentric infill was generated with wrong collision check logic (#2194) The Spiral vase checkbox couldn&amp;rsquo;t be disabled under some circumstances Fixed regression in configuration wizard (#2210) The new implementation for avoid crossing perimeters was crashing under some circumstances (#2271 #2266) Bridge acceleration wasn&amp;rsquo;t applied anymore (#2296) Bridge speed was not used for first object layer above raft (#2301) Per-part settings were ignored in background processing (#2277) Support material flow was not adjusted for each layer&amp;rsquo;s height (#2269) Seam position = random didn&amp;rsquo;t work with a single perimeter (#2179) Worked around a Clipper issue causing random crashes in G-code export on 32-bit platforms (#2306) Slider controls were rendered with zero width on Linux Choice fields were not populated correctly in object and part settings  Known issues:  When Lift on retraction is enabled and Z offset contains a value that is greater than the amount of the lift, an initial move will be generated that pushes the extruder below the configured Z offset (#2349)  This is how 3D honeycomb looks like after the improvements in this release:</description>
+    </item>
+    
+    <item>
+      <title>1.1.7</title>
+      <link>http://slic3r.org/releases/1.1.7/</link>
+      <pubDate>Sun, 03 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.1.7/</guid>
+      <description> This is a bugfix-only release.
+For the full list of new features in 1.1.x see also the release notes for 1.1.0, 1.1.2 and 1.1.3.
+Changes:  Object and volume settings are stored in AMF files as object metadata and volume metadata instead of material metadata  Bug fixes:  Fixed parsing of AMF material metadata Only retract when crossing perimeters wasn&amp;rsquo;t ignored when Fill density was 0% Some extra spots were added in thin walls Linear gap fill missed some segments (#2144) Seam position = aligned/nearest didn&amp;rsquo;t work correctly for hi-res models (#2156) Fixed unexpected result when cutting a scaled object Fixed crash when exporting SVG with support material (#2188)  </description>
+    </item>
+    
+    <item>
+      <title>1.2.0</title>
+      <link>http://slic3r.org/releases/1.2.0/</link>
+      <pubDate>Sun, 03 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.2.0/</guid>
+      <description>New features:  Incremental real-time slicing: when you change a setting, slicing doesn&amp;rsquo;t restart from scratch but only recalculates the affected parts. Also, when repositioning objects in plater or changing most options no recalculation is needed at all Toolpaths preview 3D preview of plater Customizable bed shape (rectangular, circular, or completely custom) New 3D honeycomb fill pattern (credits to David Eccles/gringer for his research work, #1646) Rotate/mirror/scale around X,Y,Z New XY Size Compensation option for handling dimensional tolerance Separate extrusion width setting for external perimeters (defaults to a thin extrusion for better quality, while internal loops use a thicker extrusion for better adhesion) Contextual menu when right-clicking an item in plater New &amp;ndash;split command line option  Improvements:  Avoid crossing perimeters is now much faster (but more work is planned on it) Option controls are enabled/disabled dynamically according to their dependency from others Perimeters of adjacent volumes having the same settings are merged Skirt is printed outside brim to prevent conflicts (#2157) Removed duplicated M204 commands (#2183)  Changes:  A minor change was applied in flow math that should reduce thickness of external perimeters by 0.</description>
+    </item>
+    
+    <item>
+      <title>1.1.6</title>
+      <link>http://slic3r.org/releases/1.1.6/</link>
+      <pubDate>Thu, 03 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.1.6/</guid>
+      <description> This is a bugfix-only release.
+For the full list of new features see also the release notes for 1.1.0, 1.1.2 and 1.1.3.
+Bug fixes:  Fixed regression in Quick Slice and Slice to SVG commands (#2122) Fixed regression in cut Fixed regression causing variable layer heights to be ignored (#2136) Workaround for upstream library bug causing Combine STL files to crash  </description>
+    </item>
+    
+    <item>
+      <title>1.1.5</title>
+      <link>http://slic3r.org/releases/1.1.5/</link>
+      <pubDate>Tue, 24 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.1.5/</guid>
+      <description> This is a bugfix-only release.
+For the full list of new features see also the release notes for 1.1.0, 1.1.2 and 1.1.3.
+Improvements:  Don&amp;rsquo;t apply pillars to raft layers  Bug fixes:  Fixed wrong number of raft layers in some situations Fixed _seamposition = aligned not working properly in some situations Fixed OpenGL &amp;ldquo;bad drawable&amp;rdquo; error (#2015 #2099) Fixed crash when setting multiple layer heights for a single object (#2105)  </description>
+    </item>
+    
+    <item>
+      <title>1.1.4</title>
+      <link>http://slic3r.org/releases/1.1.4/</link>
+      <pubDate>Thu, 05 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.1.4/</guid>
+      <description> This is an experimental release. Help us testing!
+For the full list of new features see also the release notes for 1.1.0, 1.1.2 and 1.1.3.
+Improvements:  Holes in object footprint are now ignored when generating raft to make it more continuous  Changes:  Retract on layer change is automatically disabled with Spiral vase is enabled The command line &amp;ndash;save option will now only save the options that were explicitely specified on command line, without the implicit defaults  Bug fixes:  Fixed a bug in an upstream library causing crashes or missing perimeter segments in rare situations (#2028) Fixed a crash when skirt was contained in brim area (#2058) Fixed a regress causing bridge flow to be incorrect when a default extrusion width was specified (#2027) M73 was exceeding 100% when multiple objects were printed together (only for Makerware/Sailfish) (#1912)  </description>
+    </item>
+    
+    <item>
+      <title>1.1.3</title>
+      <link>http://slic3r.org/releases/1.1.3/</link>
+      <pubDate>Sun, 25 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.1.3/</guid>
+      <description> This is an experimental release. Help us testing!
+For the full list of new features see also the release notes for 1.1.0 and 1.1.2.
+New features:  New Seam position option to configure the logic for choosing the start point of perimeters New distinct speed option for support material interface Most speed settings can now be configured for each object and and sub-part instead of globally  Improvements:  Don&amp;rsquo;t emit any temperature command if standby temperature delta is set to zero Use last extruder&amp;rsquo;s settings when adding new ones (#1997) Seam is forced to be aligned in spiral vase mode even when the original model hasn&amp;rsquo;t got aligned vertices to put it at (#2023) Thin fill loops are started at the nearest point for minimizing travel (#1990)  Changes:  Skirt and brim are now printed with support material speed instead of perimeter speed  Bug fixes:  Fixed several issues in perimeter printer order when overhangs were detected Brim and skirt from previous slicing job were not cleared when disabled after it (#2024) Excessive support material was generated when using both raft and support material (#2030) Ooze prevention and Sequential printing generated excessively long travel moves which could easily go out of print area (#2013, #2007) First layer extrusion width wasn&amp;rsquo;t affecting infill (#2042) Incomplete config was written in G-code comments (#2047, #2032) Config validation was not reported to user when using the Export G-code button in plater (#2046) Don&amp;rsquo;t crash when loading config files with empty strings in multi-value options (#2003) Thin walls forming a closed loop had overlapping segments at their endpoints (#1948, #1875) Fixed minor issues caused by bugs in the upstream Clipper library (thanks Angus Johnson) Wrong handling of large number of raft layers (#2041) Crash when exporting SVG from object containing multiple islands (#2050) Regression caused crash when splitting objects from GUI Minor crashes in GUI  </description>
+    </item>
+    
+    <item>
+      <title>1.1.2</title>
+      <link>http://slic3r.org/releases/1.1.2/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.1.2/</guid>
+      <description>This is an experimental release. Help us testing!
+For the full list of new features see also the release notes for 1.1.0.
+Thanks to Petr Ledvinap and Y. Sapir for their contributions (optimization, patches for bridges, code review).
+New features:  Ability to cut models in two with a slicing plane (resulting parts can be also exported) Support material is automatically excluded below successful bridges and only added where strictly needed in order to make anchors for potential bridges; this results in much lighter support material for parts having flat overhanging areas  Improvements:  Support material distance from object was reduced and made more consistent A base flange is added below pillars support material in order to connect them on the build plate Spiral vase mode is prevented automatically for multi-island layers (#1938)  Bug fixes:  Fixed an upstream bug in the Clipper library causing some random perimeter segments to be swapped in order (#1834) Bridge detection was choosing bad orientation in some cases Sometimes islands were not completed fully before moving onto the next one (#1137) Gap fill was not inserted in the corrected order before leaving an island (#1907) A regression caused the Default Extrusion Width option to be ignored (#1958) The [timestamp] placeholder in filename was not updated at every single job (#1957 #1995) A regression caused bad loading of multi-extruder values in GUI (#1984) Fixed regression and ambiguity about multi-value placeholders like _[first_layer_temperature1] (#1899) Fixed regression causing random lack of hole perimeters on Windows (#1950) Fixed random crash when closing the Object Settings window  The new cutting feature:</description>
+    </item>
+    
+    <item>
+      <title>1.0.1</title>
+      <link>http://slic3r.org/releases/1.0.1/</link>
+      <pubDate>Mon, 21 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.0.1/</guid>
+      <description> This is a bugfix-only release.
+Also, this is a stable release. Ideally, it is considered to be bug-free. :-)
+Improvements:  support config files saved with 1.1.x  Bugfixes:  sometimes a tiny gap was left between infill and perimeters Infill only where needed did not work properly anymore  </description>
+    </item>
+    
+    <item>
+      <title>1.1.1</title>
+      <link>http://slic3r.org/releases/1.1.1/</link>
+      <pubDate>Mon, 21 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.1.1/</guid>
+      <description>This is an experimental release. Help us testing!
+For the full list of new features see the release notes for 1.1.0.
+Improvements:  Faster loading/refreshing of presets (thanks sapir for the patch) Faster G-code export Preserve alignment of meshes when composing parts in the Object Editor Better gap fill  Changes:  Always complete one island at time (perimeter -&amp;gt; infill -&amp;gt; next island -&amp;gt; perimeter -&amp;gt; infill) instead of doing that only when Avoid crossing perimeters is enabled.</description>
+    </item>
+    
+    <item>
+      <title>1.0.0</title>
+      <link>http://slic3r.org/releases/1.0.0/</link>
+      <pubDate>Wed, 26 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.0.0/</guid>
+      <description>(I would like to thank, among others, @stepanb and Microsoft Czech for their support.)
+Major new features:  built-in automatic STL repair OpenGL 3D preview of the repaired file (thanks to iXce for the initial work); also supports multi-material files ability to override individual config options for each object in the same print job new support material rewritten from scratch new Ooze Prevention feature for multiple extruders (park extruders outside skirt and drop temperature by a specified delta)</description>
+    </item>
+    
+    <item>
+      <title>1.1.0</title>
+      <link>http://slic3r.org/releases/1.1.0/</link>
+      <pubDate>Wed, 26 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/1.1.0/</guid>
+      <description>This is an experimental release. Help us testing!
+(thanks Josef Prusa for nagging about some of these features!)
+- New features:  New algorithm for single-width thin walls, now faster and more accurate New algorithm for linear gap fill: no more shaking and adaptive extrusion width! New option for turning autocentering off in the plater Ability to set per-object and per-region settings New object editor window for composing multi-part objects (no need to use AMF files anymore) Support for modifier meshes to apply distinct local settings by intersecting them with the main model Import/export entire configuration bundles Per-region settings are now written to AMF files and read back in (they could be even assigned from a CAD) New option for generating internal interface shells between multi-part objects (useful for translucent objects or manually-designed support material) New pillars support material for saving time and material and easier removal  Improvements:  Huge internal refactoring for better modularity and less memory usage More detailed thumbnails in plater Prevent user from saving a preset named &amp;ldquo;- default -&amp;rdquo; which could lead to confusion Real-time validation for most config options  Changes:  The Spiral Vase option is now more strict because it will require user to set other options in a compatible way for it to work.</description>
+    </item>
+    
+    <item>
+      <title>0.9.10b</title>
+      <link>http://slic3r.org/releases/0.9.10b/</link>
+      <pubDate>Fri, 14 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.9.10b/</guid>
+      <description>There&amp;rsquo;s so much other work ongoing, expect yet one more release soon. Especially with the new support material implementation rewritten from scratch! In the mean time, enjoy this new release and don&amp;rsquo;t hesitate to share your feedback!
+New features:  Experimental &amp;ldquo;Wipe&amp;rdquo; feature that retracts while moving back along last path (useful for Bowden extruders) New &amp;ldquo;spiral vase&amp;rdquo; option for extruding while raising Z continuously (works with any number of solid layers) Automatic version check New option to remember last output directory New command line &amp;ndash;autosave for better integration with host software (automatically export configuration to a given file)  Improvements:  Memory usage was reduced enormously thanks to fixed memory leaks in upstream libraries Many speed improvements (also thanks to J.</description>
+    </item>
+    
+    <item>
+      <title>0.9.9</title>
+      <link>http://slic3r.org/releases/0.9.9/</link>
+      <pubDate>Fri, 29 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.9.9/</guid>
+      <description>This release carries much of the hard work from the last months. However, even more features were developed recently but they&amp;rsquo;re not tested enough to get into the public release so I decided to respect the &amp;ldquo;release early, release often&amp;rdquo; golden rule. Expect more news soon, especially about support material and multiple extruders.
+(Also, I&amp;rsquo;m new on Twitter :-) Follow me at @alranel)
+New features:  raft option for avoiding to cross perimeters by blending travel moves so that nozzle stays in the infill area and by completing each island at time option for printing external perimeters first option for printing infill before perimeters option for only generating infill where it&amp;rsquo;s needed to support ceiling (saving memory and time) option for enforcing support material on a given number of layers to improve adhesion of objects with poor footprint option for disabling retraction on layer change option for simplifying input model to given resolution to reduce memory usage and processing time ability to use multiple different layer heights in the same object ability to cut parts of a model configurable interface layers for support material base flange under support material new rectilinear-grid pattern for cross-hatched support material simple mode for new users option for solid infill extrusion wdith option for top infill extrusion width option for bridge acceleration (useful for improving anchoring) &amp;ndash;no-plater and &amp;ndash;gui-mode command line options to disable plater and choose simple/expert mode for easy integration in host software  Improvements:  infill every &amp;lsquo;n&amp;rsquo; layers was completely rewritten to be faster, cleaner and more reliable use bridging math for first solid infill layer above sparse infill better extra perimeters detection better bridge direction detection smarter and more efficient paths automatic extrusion widths default to saner behavior using low layer heights multithreaded perimeter generation various speed optimizations show default values in tooltips make sure the inwards move after last perimeter loop doesn&amp;rsquo;t exceed the object boundaries don&amp;rsquo;t apply acceleration settings to travel moves reduce toolchanges by giving priority to last extruder after layer change  Changes:  honeycomb infill is the new default one .</description>
+    </item>
+    
+    <item>
+      <title>0.9.8</title>
+      <link>http://slic3r.org/releases/0.9.8/</link>
+      <pubDate>Wed, 16 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.9.8/</guid>
+      <description>After much much work on stability and surface smoothness we have a new 0.9.8. Give it a chance, download it and enjoy! Hidden work was done on the regression test suite coverage. Also, important work is sitting in three branches waiting to be merged right after this release (it wasn&amp;rsquo;t tested enough for inclusion in this one). Expect more goodies soon.
+Thanks to Mike Sheldrake for working on many issues, and to donors and sponsors for funding the project.</description>
+    </item>
+    
+    <item>
+      <title>0.9.7</title>
+      <link>http://slic3r.org/releases/0.9.7/</link>
+      <pubDate>Thu, 22 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.9.7/</guid>
+      <description>New features:  new distinct settings for support material speed and gap fill speed (the latter one allows to avoid resonance issues when printing the very fast zigzag paths filling thin regions)  Improvements:  solid fills and bridges are now filled better reduced the amount of zigzag fills to avoid some shaking expose any environment variable starting with SLIC3R_ as placeholder for custom G-code and output filename generation allow setting top-solid-layers and bottom-solid-layers independently use a new algorithm for simplifying the output G-code without changing the shape of the resulting object avoid overextrusion in support material when user configured a too low support spacing  Changes:  usage of G92 for applying Z offset was reverted as it needs more discussion for special cases that were reported full configuration is appended to G-code files when the &amp;ndash;gcode-comments (Verbose G-code) option is set emit M106 S0 instead of M107 for Teacup  Bugfixes:  retraction wasn&amp;rsquo;t always triggered when moving between distinct objects a bug in an upstream library (Clipper) was fixed that caused crashed when loading many STL files AMF export was not working anymore infill flow for bottom layer was calculated incorrectly when layer height !</description>
+    </item>
+    
+    <item>
+      <title>0.9.5</title>
+      <link>http://slic3r.org/releases/0.9.5/</link>
+      <pubDate>Tue, 06 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.9.5/</guid>
+      <description> Changes:  usage of G92 for applying Z offset was reverted as it needs more discussion for special cases that were reported  Bugfixes:  fatal error when using brim and no skirt workaround for a bug in an upstream library which hasn&amp;rsquo;t been fixed yet fixed regression causing the first two layers to be filled in the same direction fixed retraction causing strings between copies  </description>
+    </item>
+    
+    <item>
+      <title>0.9.4</title>
+      <link>http://slic3r.org/releases/0.9.4/</link>
+      <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.9.4/</guid>
+      <description> New features:  ability to fill small gaps using multiple automatic extrusion widths object information is displayed when double-clicking on an item in the plater independently set number of top/bottom solid layers descriptive textual feedback for cooling settings allow _[print_centerX] and _[print_centerY] syntax for all coordinates settings (including bed_center etc.) and _[temperature0], _[temperature1] etc. for all index-based settings new _min_skirtlength option to ensure that the specified amount of filament is always consumed while extruding skirt (experimental) make a little move inwards by 30° before leaving the last perimeter loops  Improvements:  dual-extruder printing was tested and heavily improved if brim overlaps with skirt, make brim around skirt too instead of just skipping skirt on bottom layer paths are much smoother, without any artifacts useless extra perimeters were generated sometimes speed improvements make external perimeter first on bottom layer when brim is enabled distribute skirt loops among all extruders remember last used filaments when using multiple extruders too use a faster XML parser for AMF if available don&amp;rsquo;t apply slowdown factor to bridges make a slightly thinner interface layer at the top of support material (nophead&amp;rsquo;s idea) expose perimeter/infill/support material extrusion widths in G-code comments  Changes:  bottom layer infill is not taken into account for combination use G92 to apply Z offset  Bugfixes:  tool number written in multi-extruder G-code were wrong the Split button didn&amp;rsquo;t work anymore first layer extrusion width was ignored for skirt and sometimes for other parts too the copies number was not updated when decreasing parts in the plater honeycomb infill was overlapping too much with perimeters the plater was merging all materials into a single-material print worked around a wxWidgets issue causing the last changed setting in the GUI to be ignored when saving the preset bed temperature wasn&amp;rsquo;t being set after the first layer when first layer bed temperature was set to zero fixed regression causing one perimeter to be generated even when perimeters were set to 0 fixed regression causing too much clipping at the endpoints of loops  </description>
+    </item>
+    
+    <item>
+      <title>0.9.3</title>
+      <link>http://slic3r.org/releases/0.9.3/</link>
+      <pubDate>Thu, 27 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.9.3/</guid>
+      <description> This release, and especially the work about support for multiple extruders, was sponsored by LulzBot. Check out their products!
+New features:  print multi-material files! save and load plates new option to force a solid layer after a given number of layers convert multiple STL files into a single multi-material AMF file  Improvements:  less memory usage when the graphical interface is used rotation and scaling in the plater is a lot faster better randomization for layer starting points better adhesion of brim and support material parts positions are preserved when an object is split in the plater new _[printpreset], _[filamentpreset] and _[printer_preset]_placeholders for file names  Changes:  use support material extruder for brim  Bugfixes:  only retract when crossing perimeters was still retracting too much the &amp;ndash;datadir command line option was ignored support material extrusion width was almost not honored apply the perimeter speed to single walls  </description>
+    </item>
+    
+    <item>
+      <title>0.9.2</title>
+      <link>http://slic3r.org/releases/0.9.2/</link>
+      <pubDate>Wed, 29 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.9.2/</guid>
+      <description> This time no package is available for 64bit Linux. Sorry&amp;hellip;
+This release and all recent work about support material and multiple extruders is sponsored by LulzBot. Check out their products!
+New features:  new separate options for retraction length to be used when switching between multiple extruders new option to disable retraction when moving between infill paths inside the same island new option to configure the threshold for enforcing solid infill export plates as AMF constellations (&amp;hellip;next version will be able to import them back ;-))  Improvements:  smarter retraction in multi-extruder prints always connect infill paths, preventing gaps and unnecessary retractions avoid backwards moves when doing honeycomb infill accept newline as separator for post-processing scripts in the GUI  Changes:  temperature-related M-codes for the Teacup firmware were updated to the most recent ones  Bugfixes:  the &amp;ldquo;Delete&amp;rdquo; button in the Plater was causing crashes brim was positioned incorrectly if no skirt was enabled fixed regression causing some bridges not to be detected correctly crazy temperatures were written when using sequential printing removed warnings caused by output filenames containing the % character  </description>
+    </item>
+    
+    <item>
+      <title>0.9.1</title>
+      <link>http://slic3r.org/releases/0.9.1/</link>
+      <pubDate>Thu, 09 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.9.1/</guid>
+      <description>Wow - the 0.9.0 release produced an impressive amount of feedback. Here&amp;rsquo;s a quick new release for your summer.
+This release and all recent work about support material and multiple extruders is sponsored by LulzBot. Check out their products!
+New features:  retraction settings can be customized for each extruder now a 64bit package is now available for Windows too (Win7 users will benefit from this)  Improvements:  allow exporting with the .</description>
+    </item>
+    
+    <item>
+      <title>0.9.0</title>
+      <link>http://slic3r.org/releases/0.9.0/</link>
+      <pubDate>Tue, 07 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.9.0/</guid>
+      <description>Exciting new release, with many improvements and new features including support for multiple extruders and a redesigned graphical interface.
+This release and all recent work about support material and multiple extruders is sponsored by LulzBot. Check out their products!
+Also thanks to Henrik Brix Andersen who worked on creating the wizard and improving the user experience, and to Mark Hindness who is focusing on speed and memory optimizations. New features are being researched on, stay tuned for next releases!</description>
+    </item>
+    
+    <item>
+      <title>0.8.4</title>
+      <link>http://slic3r.org/releases/0.8.4/</link>
+      <pubDate>Sat, 23 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.8.4/</guid>
+      <description> The previous release contained a bug which caused blobbing on layer change, so you&amp;rsquo;re urged to download this one before yelling at your favorite slicing program!
+New features:  new options to customize support material: pattern, spacing, overhang angle threshold, pattern angle new option to disable the automatic addition of perimeters for sloping walls new brim feature to improve adhesion (as requested by the community!)  Improvements:  support material now works with all geometries (not just flat overhangs) perimeters now keep the full accuracy and resolution of the original model honeycomb travel moves were optimized  Changes:  skirt loops are now extruded from outside to inside arc geometry compensation was disabled  Bugfixes:  any _retractionlift value different from &amp;ldquo;0&amp;rdquo; caused no retraction on layer change, thus blobbing _first_layerspeed was accepting mm/m values rather than mm/s some infill lines were not always connected near the perimeters ratio inputs were not accepted on command line ratio inputs were always converted to absolute values on config saving when skirt distance was set to zero, the first loop coincided with the external perimeter of the object first layer extrusion width was computed using general layer height rather first layer height  </description>
+    </item>
+    
+    <item>
+      <title>0.8.3</title>
+      <link>http://slic3r.org/releases/0.8.3/</link>
+      <pubDate>Wed, 13 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.8.3/</guid>
+      <description>This release aims to fix pending bugs and address stability. A number of contributors helped with patches and testing. Note: the Mac executable requires OS X 10.6. I&amp;rsquo;m working on a 10.5 package; meanwhile, Mac Leopard users can use 0.7.2b.
+New features:  new advanced options to customize extrusion width for first layer, perimeters and infill new separate speed setting for top solid surfaces new algorithm to fill gaps (corners, little regions, vase walls only allowing for an odd number of loops etc.</description>
+    </item>
+    
+    <item>
+      <title>0.8.1</title>
+      <link>http://slic3r.org/releases/0.8.1/</link>
+      <pubDate>Mon, 28 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.8.1/</guid>
+      <description> This is a very important update, grab it now and enjoy! I want to say thanks to the wonderful community that has been helping with feedback, early testing and nice ideas. A lot of people is involved in our open &amp;ldquo;quality assurance&amp;rdquo; process!
+New features:  graphical interface for composing multiple objects in one single print (with tools for rotation, scaling etc.) new &amp;ndash;merge switch to compose multiple object with auto-positioning from command line new option to randomize starting points across layers automatic detection of additional required perimeters for avoiding haps in domed/sloping objects (the perimeters settings means now minimum perimeters as Slic3r could add more when needed) sequential printing: print a complete object, then move onto next one, with automatic collision detection ability to export STL files of composed plates, as well as a Splitcommand to turn multi-object files into individual objects we can read OBJ files now  Improvements:  very large memory savings and speed boosts, allowing to process high-resolutions files without getting out of memory; also, the number of threads is customizable very improved surface quality due to new smoothing algorithms the GUI doesn&amp;rsquo;t block while slicing and a Cancel button was added to stop the process hole perimeters are extruded in reverse order (from the outermost to the innermost) to get better overhangs a slight compensation is applied to avoid small hole shrinkage support material now uses honeycomb pattern (much work is still needed on support material) retract before changing tool for dual extrusion  Changes:  SVG colors were inverted to better support DLP printing (next versions will carry more settings for SVG export)  Bugfixes:  fixed some GUI memory leaks fixed some fatal errors fixed a bug causing high memory consumption when infilling every 2 or more layers some holes where filled some nearly-thin walls were discarded removed tiny dots/blobs that were generated sometimes bottom layer speed ratio wasn&amp;rsquo;t taken into account when estimating layer time omit any G92 E0 when in relative mode  </description>
+    </item>
+    
+    <item>
+      <title>0.8.2</title>
+      <link>http://slic3r.org/releases/0.8.2/</link>
+      <pubDate>Mon, 28 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.8.2/</guid>
+      <description>Due to an ugly bug slipped in the previous release, a quick replacement is out.</description>
+    </item>
+    
+    <item>
+      <title>0.7.2b</title>
+      <link>http://slic3r.org/releases/0.7.2b/</link>
+      <pubDate>Mon, 16 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.7.2b/</guid>
+      <description>Due to an error slipped in the 0.7.2 release and quickly reported by early downloaders, I recommend to download the newly-released 0.7.2b now. Sorry!</description>
+    </item>
+    
+    <item>
+      <title>0.7.2</title>
+      <link>http://slic3r.org/releases/0.7.2/</link>
+      <pubDate>Sun, 15 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.7.2/</guid>
+      <description> We have a shiny new beautiful icon now! Thanks to Corey Daniels for designing it.
+Major new features:  Honeycomb (hexagonal) infill pattern! SVG export for DLP printers and other purposes automatic arrangement for printing multiple copies of the same object (thanks Triffid Hunter for contributing this one)  New features:  new Reslice command in the File menu customizable G-code to be executed at layer change  Improvements:  huge speed boost (20%-50%) and more parallelization of long-running algorithms new implementation of support material generation don&amp;rsquo;t slow down travel moves when cooling is enabled new &amp;ndash;threads command line option to set number of parallel jobs  Minor improvements:  enable G0 automatically for Mach3 allow decimal values for skirt/duplicate distances and speeds added the coordinates of the first non-manifold edge to the warning messages only output M109 if there&amp;rsquo;s none in the user-supplied start G-code make sure all concentric fill loops are extruded in the same direction to prevent sudden changes of direction  Changes:  &amp;ndash;duplicate-x and &amp;ndash;duplicate-y were merged into a single &amp;ndash;duplicate-grid option  Bugfixes:  some holes were filled the No Extrusion mode had no effect use M109 for bed control (Makerbot) use P instead of S for M106 (Mach3) fixed some fatal errors  </description>
+    </item>
+    
+    <item>
+      <title>0.7.1</title>
+      <link>http://slic3r.org/releases/0.7.1/</link>
+      <pubDate>Sat, 10 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.7.1/</guid>
+      <description> New features:  new fan always on option bed temperature control (first layer/other layers) Growl notifications  Improvements:  some algorithms are now less complex (thus faster with larger models) fill/perimeter contact is maximized for line pattern slowdown is now triggered regardless of whether a fan is used allow to use config options in start/end G-code, like for output filename pattern throw an error if a user wants to print a 0mm layer remove M82/M83 codes for Makerbot output  Changes:  the Use relative E option is now back in the GUI remove G0 from the GUI until most firmwares implement it avoid G92 codes for Mach3 output  Bugfixes:  retraction wasn&amp;rsquo;t triggered when moving between copies a bad &amp;ldquo;bridge fan end&amp;rdquo; string was sometimes inserted in G-code fixed some fatal errors fixed some bogus non-manifold errors happening with certain values of first layer height infill extrudates were escaping perimeters sometimes  </description>
+    </item>
+    
+    <item>
+      <title>0.7.0</title>
+      <link>http://slic3r.org/releases/0.7.0/</link>
+      <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.7.0/</guid>
+      <description> This is a very important update: don&amp;rsquo;t miss it and enjoy the goodies!
+Major new features:  a new rock-solid slicing algorithm, based on a topological approach, able to process efficiently a wide range of STL files without any warning generation of support material (optionally, with a second extruder) cooling and fan control ability to read the AMF format  New features:  first layer temperature support for Makerbot and Mach3 G-code flavors duplication is performed on generated toolpaths instead of 3D mesh, resulting in a nearly-constant time for any number of object copies infill and support material are multi-threaded, so they will take advantage of multiple CPUs/cores support for custom post-processing scripts new notes field in configuration profiles  Improvements:  uses 40% less memory ability to load multiple config files using the command line ask for confirmation when slicing more than one copy contours and holes are extruded in the same direction (ccw) skein multiple files with a single command from command line some compensation for hole shrinkage  Minor improvements:  do not display the progress dialog as an application-wide modal dialog Config files are now portable between Unix and Windows and allow for Unicode characters added extrusion multiplier to G-code comments  Bugfixes:  models with rounded walls had small useless infill regions small perimeter speed was applied to all holes too, regardless of their size fixed some fatal errors  </description>
+    </item>
+    
+    <item>
+      <title>0.6.0</title>
+      <link>http://slic3r.org/releases/0.6.0/</link>
+      <pubDate>Fri, 20 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.6.0/</guid>
+      <description> After much work, a new beefy release of Slic3r is ready for download.
+New features:  thin walls! new Output Filename Format option to allow for complex output filenames using option values (like_foo_3perimeters0.15height.gcode) automatic retraction at the end of the print  Improvements:  much better overlap between infill and perimeters in those situations where previous version was still producing gaps smarter order for hole perimeters to save travel and time large internal refactoring (less memory and some speed) bridges now have higher priority than other solid regions loops are now closed better use solid print speed for internal solid layers too checkbox in GUI to enable comments in G-code warn if no layers were detected  Changes:  Windows package is now distributed as a ZIP file rather than a self-extracting executable  Bugfixes:  some island having no holes and contained in holes themselves were ignored fatal error in arc detection code wrong month number in output small regions were infilled even with fill_density = 0 fill was escaping perimeters near some corners other fatal errors removed, especially when dealing with dirty files  </description>
+    </item>
+    
+    <item>
+      <title>0.5.7</title>
+      <link>http://slic3r.org/releases/0.5.7/</link>
+      <pubDate>Wed, 21 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.5.7/</guid>
+      <description>New features:  Slice and save as&amp;hellip; command to choose the output file name Compatibility with Windows XP 64 Total filament length is written to the output file and showed on command line  Improvements:  Improved flow and overlapping for solid surfaces by using a better physical model in internal calculations; this gives muchhigher quality making it less sparse then it was before Improved the slicing algorithm; this should reduce the STL warnings Better overlapping for loops Concentric infill now uses the adjusted flow spacing for better surface quality; it also starts infilling always from the center point.</description>
+    </item>
+    
+    <item>
+      <title>0.5.6</title>
+      <link>http://slic3r.org/releases/0.5.6/</link>
+      <pubDate>Wed, 14 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.5.6/</guid>
+      <description> Improvements:  New extrusion math for more accuracy Make sure there are no empty layers at the bottom Don&amp;rsquo;t slow down retractions on bottom layer Remember last opened directory (until application is closed) Don&amp;rsquo;t die when config has unknown options More STL files are now accepted  Changes:  Default infill angle is now 45° Default retraction speed is now 30mm/s Comments in gcode must now be explicitely enabled with the new &amp;ndash;gcode-comments option  Bugfixes:  Objects had slight dimension errors Removed fatal errors thrown during infill (small regions and infill every N layers) Fixed bolding and font issues on Windows Removed fatal error when nothing in a single layer could be parsed Duplicate was giving bad number of copies  </description>
+    </item>
+    
+    <item>
+      <title>0.5.5b</title>
+      <link>http://slic3r.org/releases/0.5.5b/</link>
+      <pubDate>Sun, 04 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.5.5b/</guid>
+      <description>New features:  optimal bridging direction is detected for more bridges flow width is auto adjusted to avoid leaving gaps at the border of solid regions customizable speed for small perimeters customizable multiplier for the flow rate used when bridging  Improvements:  important settings are marked in bold &amp;ndash; new users can start printing by changing only those ones infill segments are now connected to allow better sticking to the perimeters  Bugfixes:  0.</description>
+    </item>
+    
+    <item>
+      <title>0.5.4</title>
+      <link>http://slic3r.org/releases/0.5.4/</link>
+      <pubDate>Wed, 30 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.5.4/</guid>
+      <description> A new juicy release is ready!
+New features:  distinct speeds for perimeters, infill, solid infill and bridges warn about non-manifold or dirty models allow solid fill layers to be zero new &amp;ndash;extrusion-axis option  Improvements:  high tolerance for dirty models; it will attempt to repair any missing layer (all Prusa Mendel parts now slice correctly!) options on command line now override loaded config file note used settings in exported gcode  Changes:  all feed rate options were renamed using the word speed  Bugfixes:  concentric infill threw errors plate was lifted erroneously at Z change fill density = 0 prevented generation of extra solid layers some bridges, when very close to other solid surfaces, could lead to overlapping infill the extrusion width ratio setting produced wrong flow rate sometimes removed sparse errors could not read back a config file with empty start or end gcode  </description>
+    </item>
+    
+    <item>
+      <title>0.5.3</title>
+      <link>http://slic3r.org/releases/0.5.3/</link>
+      <pubDate>Sat, 26 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.5.3/</guid>
+      <description> Bugfixes:  options having zero values were broken 0.5.2 hollow objects were printed with wrong sparse infill minor errors  </description>
+    </item>
+    
+    <item>
+      <title>0.5.2</title>
+      <link>http://slic3r.org/releases/0.5.2/</link>
+      <pubDate>Fri, 25 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.5.2/</guid>
+      <description> A new release just after two days!
+New features:  new Extrusion width ratio option to force a given ratio between extrusion width and layer height instead of having Slic3r calculate it automatically new super-fast concentric infill pattern  Improvements:  GUI progress bar is not determinate and shows some information avoid unnecessary retractions during infill  Changes:  Filament packing density was renamed to Extrusion multiplier  Bugfixes:  Infill every &amp;lsquo;n&amp;rsquo; layers was broken after recent changes setting Temperature to zero didn&amp;rsquo;t remove it from output  </description>
+    </item>
+    
+    <item>
+      <title>0.5.1</title>
+      <link>http://slic3r.org/releases/0.5.1/</link>
+      <pubDate>Wed, 23 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.5.1/</guid>
+      <description> 10 more days and a new release is there!
+New features:  if Temperature is set to zero, no temperature control will be added to the resulting gcode file  Improvements:  large refactoring of the bridging logic - all bridges should now be detected (although some work needs to be done on optimal infill direction); the quality of solid surfaces and regions near bridges and solid surfaces has improved a lot use solid infill under pillars and small regions instead of using an internal low-density infill don&amp;rsquo;t die on non-manifold models; always try to generate some output  Changes:  print settings moved to first tab M109 is used instead of M104 for temperature control  Bugfixes:  bottom layer speed was ignored some solid layers were skipped some ghost lines were extruded in open air outside the object when a 45° infill angle was used  </description>
+    </item>
+    
+    <item>
+      <title>0.5.0</title>
+      <link>http://slic3r.org/releases/0.5.0/</link>
+      <pubDate>Sun, 13 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://slic3r.org/releases/0.5.0/</guid>
+      <description> After 10 more days of work, a new release is out!
+New features:  four new exciting fill patterns (including line)! new algorithm for re-processing layers with dirty geometry, this makes the parser more tolerant start and end gcode is customizable in the GUI too new &amp;ndash;retract-lift option to lift Z while doing travel moves new &amp;ndash;no-extrusion option to disable E codes new &amp;ndash;skirt-height option new &amp;ndash;first-layer-height-ratio option new &amp;ndash;close-after-slicing for easy integration with external programs new &amp;ndash;g0 option to output G0 for fast retractions (experimental)  Improvements:  perimeters are extruded at once for each island, saving on travel toolpaths perimeters are extruded using a shortest path search, avoiding unnecessary travel smarter toolpaths for infills with different density multiply was renamed to duplicate infill is now overlapped with perimeters by 15% GUI was rearranged using tabs  Bugfixes:  fixed fatal error occuring on Windows infill solid layers even when &amp;ndash;fill-density is set to zero membranes were not printed correctly G2/G3 coordinates for experimental arcs were wrong print first layer at Z = 1 * layer height instead of zero  </description>
+    </item>
+    
+  </channel>
+</rss>

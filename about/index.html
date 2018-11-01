@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>  
+	<title>Slic3r - About</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" type="application/rss+xml" title="Slic3r RSS feed" href="/rss" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+	<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/tan-pink.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.tools.js"></script>
+	<script type="text/javascript" src="/javascripts/fancybox/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="/javascripts/site.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			
+			$("a.screenshot").fancybox({
+			    openEffect	: 'elastic',
+    	        closeEffect	: 'elastic',
+    	        helpers : {
+    		        title : {
+    			        type : 'inside'
+    		        }
+    	        },
+				'overlayShow'	:	false,
+				'beforeLoad'    : function() {
+                    var el, id = $(this.element).data('title-id');
+                    if (id) {
+                        el = $('#' + id);
+                        if (el.length) {
+                            this.title = el.html();
+                        }
+                    }
+                }
+			});
+
+			
+			$(".scrollable").scrollable({ });
+		});
+	</script>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <link type="text/css" href="/inc/jquery/css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div id="header">
+		<div class="page">
+			
+			<a href="/" class="logo"><span>Slic3r</span></a>
+			<div id="subtitle">G-code generator for 3D printers</div>
+			
+			<ul>
+			    <li><a href="/">Home</a></li>
+			    <li><a href="/about">About</a></li>
+			    <li><a href="/download">Download</a></li>
+			    <li><a href="http://manual.slic3r.org/" style="color: red">The Manual</a></li>
+			    
+			        <li><a href="/blog/new-stable-1.2.9/">Blog</a></li>
+			    
+			    <li><a href="/donations">Donate</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div id="page">
+				
+		<div class="top"></div>
+		<div class="content">
+			
+			
+
+    <div class="header page">
+        <h1>About</h1>
+    </div>
+    
+    <div class="padding">
+        <div class="left">
+            
+
+<p>Slic3r is the tool you need to <strong>convert a 3D model into printing instructions for your 3D printer</strong>. It cuts the model into horizontal slices (<strong>layers</strong>), generates toolpaths to fill them and calculates the amount of material to be extruded.</p>
+
+<p><img src="screenshot.jpg" alt="" /></p>
+
+<p>The Slic3r project was born in 2011 within the <a href="http://reprap.org/">RepRap</a> community as an effort to provide the growing 3D printing technology with an <strong>open and flexible toolchain</strong>. The code and the algorithms are not based on any other previous work. <strong>Readability</strong> and <strong>maintainability of the code</strong> are among the design goals. Slic3r, being a true <strong>non-profit community project</strong>, allowed the people to experiment with several <strong>original new features</strong> that have become common thereafter such as <strong>multiple extruders, brim, microlayering, bridge detection, command line slicing, variable layer heights, sequential printing</strong> (one object at time), <strong>honeycomb infill, mesh cutting, object splitting into parts, AMF support</strong>, avoid crossing perimeters, distinct extrusion widths, modifiers, and much more. All of these features were first introduced in Slic3r and are now part of the commercial software out there.</p>
+
+<p>Slic3r is based on a <strong>community of people working collaboratively</strong> on <a href="https://github.com/slic3r/Slic3r">GitHub</a>, discussing new features and testing them. It&rsquo;s being used by tens of thousands of people all over the world, and there are more than 1,000 forks of it. It&rsquo;s a non-profit project. 3D printing became a business since the RepRap community was born, but <strong>we want to keep 3D printing free</strong>, and Slic3r will always be an <strong>independent project</strong>, not driven by any business or single vendor. Support is appreciated, though.</p>
+
+<p>Slic3r was part of the <strong>Google Summer of Code</strong> program 2017.</p>
+
+<p>Oh, and we don&rsquo;t like marketing buzzwords. ;-)</p>
+
+<p>Slic3r is:</p>
+
+<ul>
+<li><strong>Open:</strong> it is totally open source and it&rsquo;s independent from any commercial company or printer manufacturer. We want to keep 3D printing open and free.</li>
+<li><strong>Compatible:</strong> it supports all the known G-code dialects (Marlin, Repetier, Mach3, LinuxCNC, Machinekit, Smoothie, Makerware, Sailfish).</li>
+<li><strong>Advanced:</strong> many configuration options allow for fine-tuning and full control. While novice users often need just few options, Slic3r is mostly used by advanced users.</li>
+<li><strong>Community-driven:</strong> new features or issues are discussed in the GitHub repository. Join our collaborative effort and help improve it!</li>
+<li><strong>Robust:</strong> the codebase includes more than 1,000 unit and regression tests, collected in 6 years of development.</li>
+<li><strong>Modular:</strong> the core of Slic3r is libslic3r, a C++ library that provides a granular API and reusable components.</li>
+<li><strong>Embeddable:</strong> a complete and powerful command line interface allows to use Slic3r from the shell or to integrate it in server-side applications.</li>
+<li><strong>Powerful:</strong> see the list below!</li>
+</ul>
+
+<h2 id="features">Features</h2>
+
+<p>(Most of these are also available in the command line interface.)</p>
+
+<ul>
+<li><strong>G-code generation</strong> for FFF/FDM printers;</li>
+<li><strong>conversion</strong> between STL, OBJ, AMF and POV formats;</li>
+<li><strong>auto-repair</strong> of non-manifold meshes (and ability to re-export them);</li>
+<li><strong>SVG export</strong> of slices;</li>
+<li>built-in <strong>USB/serial host controller</strong>, supporting multiple simultaneous printers each one with a spool queue;</li>
+<li><strong>OctoPrint</strong> integration (send to printer);</li>
+<li>built-in <strong>projector and host for DLP printers</strong>;</li>
+<li>tool for <strong>cutting meshes</strong> in multiple solid parts with visual preview (also in batch using a grid);</li>
+<li>tool for extruding 2.5D TIN meshes.</li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            
+            <div class="sidebar_box">
+                
+<p><strong>Lead:</strong></p>
+<ul><li><strong><strong>Alessandro Ranellucci<br></strong></strong>(alranel / Sound)<br><a href="mailto:alessandro@unterwelt.it">alessandro@unterwelt.it<br></a><a href="https://twitter.com/alranel">twitter.com/alranel</a></li>
+</ul><p><strong>Co-maintaner:</strong></p>
+<ul><li><strong><strong>Joseph Lenox<br></strong></strong>(lordofhyphens / LoH)</li>
+</ul><p>You can often find us in the #slic3r channel in&nbsp;<a href="http://webchat.freenode.net/">FreeNode IRC</a>.</p>					        					    
+            </div>
+            
+            <div class="sidebar_box">
+                <p>Several contributors have been helping in development, including:</p>
+<ul><li><strong>Henrik Brix Andersen</strong> (brix)</li>
+<li><strong>Vojtech Bubnik</strong> (bubnkiv)</li>
+<li><strong>Nicolas Dandrimont</strong> (olasd)</li>
+<li><strong>Mark Hindness</strong> (zqk/beanz)</li>
+<li><strong>Petr Ledvina</strong></li>
+<li><strong>Y. Sapir</strong></li>
+<li><strong>Mike Sheldrake</strong> (mesheldrake)</li>
+<li><strong>Kliment Yanev</strong> (kliment)</li>
+<li><strong>Gary Hodgson</strong></li>
+</ul><p>and tens of others. The Slic3r logo was designed by <strong>Corey Daniels</strong>.</p>
+            </div>
+            
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+
+			
+		</div>
+		<div class="bottom"></div>
+	</div>
+	
+	<div id="footer" class="page">
+		<p>Slic3r is licensed under the GNU Affero General Public License, version 3<br />
+		    The Slic3r icon was designed by <a href="http://twitter.com/cdugd/">Corey Daniels</a></p>
+		<div class="clear"></div>
+	</div>
+	
+</body>
+</html>

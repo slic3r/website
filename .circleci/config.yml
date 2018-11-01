@@ -1,0 +1,76 @@
+# we use a rw SSH key instead of the default one injected by CircleCI because we
+# use it for deploy as well
+anchor_2: &add_ssh_keys
+    fingerprints:
+      - "79:70:86:f8:9e:e3:80:c6:b4:73:22:25:ca:83:20:3a"
+
+defaults: &defaults
+    working_directory: /tmp/hugo
+    docker:
+      - image: cibuilds/hugo:latest
+    environment:
+      HUGO_BUILD_DIR: /tmp/hugo/public
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - add_ssh_keys: *add_ssh_keys
+      - checkout
+
+      - run: HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
+ 
+      # - run:
+      #     name: test our generated HTML files
+      #     command: |
+      #       htmlproofer $HUGO_BUILD_DIR --allow-hash-href --check-html \
+      #           --empty-alt-ignore --disable-external
+      
+      - persist_to_workspace:
+          root: /tmp/hugo
+          paths:
+            - public
+            - .circleci
+
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: /tmp/hugo
+      
+      - add_ssh_keys: *add_ssh_keys
+      - checkout:
+          path: /tmp/gh-pages
+      - deploy:
+          name: Deploy
+          command: |
+            git config --global user.email no-reply@slic3r.org
+            git config --global user.name "Deploy Bot"
+            cd /tmp/gh-pages
+            git checkout gh-pages || git checkout --orphan gh-pages
+            git rm -rf .
+            cp -a $HUGO_BUILD_DIR/. .
+            # copy .circleci as well so that the branch filter is honored
+            mkdir -p .circleci && cp -a /tmp/hugo/.circleci/. .circleci/.
+            git add -A
+            git commit -m "Automated deployment to GitHub Pages: ${CIRCLE_SHA1}" --allow-empty
+            git push origin gh-pages
+
+workflows:
+  version: 2
+  build-test-and-approval-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
+                - gh-pages-deploy

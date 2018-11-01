@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>  
+	<title>Slic3r - 1.2.8</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" type="application/rss+xml" title="Slic3r RSS feed" href="/rss" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+	<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/tan-pink.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.tools.js"></script>
+	<script type="text/javascript" src="/javascripts/fancybox/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="/javascripts/site.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			
+			$("a.screenshot").fancybox({
+			    openEffect	: 'elastic',
+    	        closeEffect	: 'elastic',
+    	        helpers : {
+    		        title : {
+    			        type : 'inside'
+    		        }
+    	        },
+				'overlayShow'	:	false,
+				'beforeLoad'    : function() {
+                    var el, id = $(this.element).data('title-id');
+                    if (id) {
+                        el = $('#' + id);
+                        if (el.length) {
+                            this.title = el.html();
+                        }
+                    }
+                }
+			});
+
+			
+			$(".scrollable").scrollable({ });
+		});
+	</script>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <link type="text/css" href="/inc/jquery/css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div id="header">
+		<div class="page">
+			
+			<a href="/" class="logo"><span>Slic3r</span></a>
+			<div id="subtitle">G-code generator for 3D printers</div>
+			
+			<ul>
+			    <li><a href="/">Home</a></li>
+			    <li><a href="/about">About</a></li>
+			    <li><a href="/download">Download</a></li>
+			    <li><a href="http://manual.slic3r.org/" style="color: red">The Manual</a></li>
+			    
+			        <li><a href="/blog/new-stable-1.2.9/">Blog</a></li>
+			    
+			    <li><a href="/donations">Donate</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div id="page">
+				
+		<div class="top"></div>
+		<div class="content">
+			
+			
+
+    <div class="header page">
+        <h1>
+            Release notes for <b>1.2.8</b> <small>(2015-06-08)</small>
+            
+        </h1>
+    </div>
+    
+    <div class="padding">
+        <div class="left">
+            
+
+<p>More bugfixes. We want to make 1.2.x stable soon. Dear Slic3r community: thank you for your support, testing, reports and love!</p>
+
+<p>For the whole list of changes and new features see the release notes for <a href="/releases/1.2.0">1.2.0</a>, <a href="/releases/1.2.1">1.2.1</a>, <a href="/releases/1.2.2">1.2.2</a>, <a href="/releases/1.2.3">1.2.3</a>, <a href="/releases/1.2.5">1.2.5</a>, <a href="/releases/1.2.6">1.2.6</a> and <a href="/releases/1.2.7">1.2.7</a>.</p>
+
+<h4 id="new-features">New features:</h4>
+
+<ul>
+<li>Associate a color to each filament preset for quicker browsing</li>
+<li>New experimental autospeed feature that chooses speeds automatically in order to keep volumetric speed and nozzle pressure constant; just set all speeds to 0 to enable it (<a href="https://github.com/alexrj/Slic3r/issues/2810">#2810</a>)</li>
+<li>New <em>Max Volumetric Speed</em> config option</li>
+<li>A new _[current<em>extruder]</em> placeholder is now available (<a href="https://github.com/alexrj/Slic3r/issues/2866">#2866</a>)</li>
+</ul>
+
+<h4 id="improvements">Improvements:</h4>
+
+<ul>
+<li>Nice menu item icons :o)</li>
+<li>When zooming in the 2D layers preview, zoom happens around mouse location</li>
+<li>When loading too large objects, fit them to build plate and warn user (<a href="https://github.com/alexrj/Slic3r/issues/2853">#2853</a>)</li>
+<li>Prompt user when trying to use 100% density with an infill pattern that does not support solid density</li>
+<li>Cmd+, opens Preferences (<a href="https://github.com/alexrj/Slic3r/issues/2860">#2860</a>)</li>
+<li>Prompt user when overwriting a G-code file during export (<a href="https://github.com/alexrj/Slic3r/issues/2882">#2882</a>)</li>
+</ul>
+
+<h4 id="changes">Changes:</h4>
+
+<ul>
+<li>If the <em>&ndash;save</em> command line option is called with no other config settings, the full default config is exported (<a href="https://github.com/alexrj/Slic3r/issues/2110">#2110</a>)</li>
+</ul>
+
+<h4 id="bugfix">Bugfix:</h4>
+
+<ul>
+<li>Fixed more situations where filenames and presets with non-ASCII characters were not handled correctly</li>
+<li>Fixed one minor situation when gap infill was missing (<a href="https://github.com/alexrj/Slic3r/issues/2560">#2560</a>)</li>
+<li>Fixed plater views not being refreshed after completing the config wizard</li>
+<li>Fixed crashes on Linux (<a href="https://github.com/alexrj/Slic3r/issues/2858">#2858</a> <a href="https://github.com/alexrj/Slic3r/issues/2613">#2613</a>)</li>
+<li>Fixed concurrency issue when changing the number of extruders leading to slow GUI refresh or crashes (<a href="https://github.com/alexrj/Slic3r/issues/2863">#2863</a>)</li>
+<li>Fixed concave vertices detection not working correctly for holes (<a href="https://github.com/alexrj/Slic3r/issues/2857">#2857</a>)</li>
+<li>Fixed STL parser for handling more kinds of broken models (<a href="https://github.com/alexrj/Slic3r/issues/2471">#2471</a> <a href="https://github.com/alexrj/Slic3r/issues/2842">#2842</a>)</li>
+<li>Added an explicit close button to the About window as a workaround for lack of title bar in wxMSW and wxGTK (<a href="https://github.com/alexrj/Slic3r/issues/2688">#2688</a>)</li>
+<li>Fixed bad handling of files with non-ASCII names during OctoPrint upload (<a href="https://github.com/alexrj/Slic3r/issues/2827">#2827</a>)</li>
+<li>Fixed wrong number of raft layers generated in some situations (<a href="https://github.com/alexrj/Slic3r/issues/2723">#2723</a>)</li>
+<li>Fixed the Repeat Last Quick Slice command being affected by plater changes (<a href="https://github.com/alexrj/Slic3r/issues/2016">#2016</a>)</li>
+<li>Fixed small gaps between infill and perimeters when solid infill extrusion width is much thinner than internal infill extrusion width (<a href="https://github.com/alexrj/Slic3r/issues/2895">#2895</a>)</li>
+</ul>
+
+<hr />
+
+<p><img src="01.jpg" alt="" /></p>
+
+<p><img src="02.jpg" alt="" /></p>
+
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            <div class="sidebar_box">
+                <h4>Release notes:</h4>
+
+<ul>
+    
+    <li>
+        <a href="/releases/1.2.9/">1.2.9</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.8/">1.2.8</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.7/">1.2.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.6/">1.2.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.5/">1.2.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.4/">1.2.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.3/">1.2.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.2/">1.2.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.1/">1.2.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.7/">1.1.7</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.0/">1.2.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.6/">1.1.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.5/">1.1.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.4/">1.1.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.3/">1.1.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.2/">1.1.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.0.1/">1.0.1</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.1/">1.1.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.0.0/">1.0.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.0/">1.1.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.10b/">0.9.10b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.9/">0.9.9</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.8/">0.9.8</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.7/">0.9.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.5/">0.9.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.4/">0.9.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.3/">0.9.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.2/">0.9.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.1/">0.9.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.0/">0.9.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.4/">0.8.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.3/">0.8.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.1/">0.8.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.2/">0.8.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.2b/">0.7.2b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.2/">0.7.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.1/">0.7.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.0/">0.7.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.6.0/">0.6.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.7/">0.5.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.6/">0.5.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.5b/">0.5.5b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.4/">0.5.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.3/">0.5.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.2/">0.5.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.1/">0.5.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.0/">0.5.0</a>
+        
+    </li>
+    
+</ul>
+
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+
+			
+		</div>
+		<div class="bottom"></div>
+	</div>
+	
+	<div id="footer" class="page">
+		<p>Slic3r is licensed under the GNU Affero General Public License, version 3<br />
+		    The Slic3r icon was designed by <a href="http://twitter.com/cdugd/">Corey Daniels</a></p>
+		<div class="clear"></div>
+	</div>
+	
+</body>
+</html>

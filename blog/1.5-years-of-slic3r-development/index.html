@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>  
+	<title>Slic3r - 1.5 years of Slic3r development</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" type="application/rss+xml" title="Slic3r RSS feed" href="/rss" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+	<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/tan-pink.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.tools.js"></script>
+	<script type="text/javascript" src="/javascripts/fancybox/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="/javascripts/site.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			
+			$("a.screenshot").fancybox({
+			    openEffect	: 'elastic',
+    	        closeEffect	: 'elastic',
+    	        helpers : {
+    		        title : {
+    			        type : 'inside'
+    		        }
+    	        },
+				'overlayShow'	:	false,
+				'beforeLoad'    : function() {
+                    var el, id = $(this.element).data('title-id');
+                    if (id) {
+                        el = $('#' + id);
+                        if (el.length) {
+                            this.title = el.html();
+                        }
+                    }
+                }
+			});
+
+			
+			$(".scrollable").scrollable({ });
+		});
+	</script>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <link type="text/css" href="/inc/jquery/css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div id="header">
+		<div class="page">
+			
+			<a href="/" class="logo"><span>Slic3r</span></a>
+			<div id="subtitle">G-code generator for 3D printers</div>
+			
+			<ul>
+			    <li><a href="/">Home</a></li>
+			    <li><a href="/about">About</a></li>
+			    <li><a href="/download">Download</a></li>
+			    <li><a href="http://manual.slic3r.org/" style="color: red">The Manual</a></li>
+			    
+			        <li><a href="/blog/new-stable-1.2.9/">Blog</a></li>
+			    
+			    <li><a href="/donations">Donate</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div id="page">
+				
+		<div class="top"></div>
+		<div class="content">
+			
+			
+
+    <div class="header page">
+        <h1>
+            1.5 years of Slic3r development
+        </h1>
+    </div>
+    
+    <div id="blog" class="padding">
+        <div class="left">
+            <div class="post">
+                <span class="meta">Posted by Alessandro Ranellucci on 2013-06-30</span>
+                <div class="content">
+                    <p>Slic3r was born in late 2011 as an attempt to modernize the 3D printing toolchain. It simplified slicing by <strong>reducing configuration to just three options</strong> (nozzle diameter, filament diameter, temperature) and it also made slicing a lot <strong>faster</strong> - but speed wasn&rsquo;t the main goal. The goal was to have clean, structured code for prototyping new features and getting a powerful slicing engine. This is why Slic3r uses <strong>C++</strong> code for the hardcore geometric processing, while it keeps higher-level logic in a flexible language such as <strong>Perl</strong>. Of course, more features mean longer processing times. As always, it comes down to a compromise!</p>
+
+<p>I&rsquo;ll try to list some of the things that Slic3r introduced in 3D printing as original features.</p>
+
+<p>First off, Slic3r was designed to expose a <strong>full command line interface</strong>. All options are available on the command line, and batch jobs can be performed through it. This is to avoid reinventing the wheel and let other projects focus on nice graphical interfaces, 3D visualization, G-code preview, print control. Slic3r can be easily integrated everywhere.</p>
+
+<p><img src="01.jpg" alt="" /></p>
+
+<p>The first big change introduced by Slic3r was the <strong>automatic detection of bridges</strong>. Skeinforge couldn&rsquo;t do multiple bridges in a single layer, as it just made solid infill span the entire layer, resulting in a waste of material and suboptimal bridging direction. Slic3r detects each bridge independently and only extend it by the distance strictly needed for anchoring. (The same logic is applied to top surfaces, where solid infill is only extended where needed instead of the entire layer.)</p>
+
+<p><img src="02.jpg" alt="" /></p>
+
+<p>A well-known feature introduced by Slic3r is <strong>Microlayering</strong> (aka <em>Infill every &lsquo;n&rsquo; layers</em>, aka <em>Combine infill</em>). With this option, a different layer height is used for infill and for perimeters: this way you can do, say, 0.1mm thick perimeters while still printing infill at 0.3mm. You save time while still getting high resolutions on the surfaces. <span style="text-align:center;">Note that this is very different from the &ldquo;Skin&rdquo; option that was introduced in Skeinforge: that one just duplicated perimeters several times, so you&rsquo;d still get the infill resolution even on the outside. A former microlayering concept and implementation was actually introduced by Adrian Bowyer, so this is not entirely new in Slic3r.</span></p>
+
+<p><img src="03.jpg" alt="" /></p>
+
+<p>Speaking of multiple layer heights, Slic3r introduced the ability to <strong>assign different layer heights to different regions</strong> of a single print. This allows to save time while still using thin layers for parts that need accuracy, and for example to have a thicker first layer for easier adhesion to print bed. Such a feature required a large refactoring of the codebase so that no algorithm relies on the assumption that all layers have the same thickness.</p>
+
+<p><img src="04.jpg" alt="" /></p>
+
+<p><img src="05.jpg" alt="" /></p>
+
+<p><strong>Brim</strong> is one more popular feature. It was actually proposed by the community as an effective way to improve adhesion and avoid warping.</p>
+
+<p><img src="06.jpg" alt="" /></p>
+
+<p>Slic3r&rsquo;s <strong>cooling logic</strong> was also innovative: it controls both cooling fan and print speed in a single integrated logic. Triffid Hunter (Michael Moon), active member of the RepRap community, proposed it.</p>
+
+<p><img src="07.jpg" alt="" /></p>
+
+<p><strong>Sequential printing</strong> is one more popular feature, enabling users to compose plates of objects but have the printer print one object completely at time. This reduces the impact of a failure, since some objects would be completed.</p>
+
+<p>The <strong>Avoid crossing perimeters</strong> feature, which took a few months to be completed, bends travel moves so that they don&rsquo;t cross objects when not strictly needed - and when it&rsquo;s needed, it tries to cross a vertex rather than a flat surface. This allows to get clean prints even with Bowden extruders (more prone to oozing). Skeinforge had a feature named &lsquo;comb&rsquo; which served the same purpose, but it was very different as it actually walked over perimeters (while Slic3r stays far from perimeters, either on the inside or on the outside) and it followed them even in concave points until it reached the destination (while Slic3r just bends the path). Slic3r&rsquo;s implementation is based on visibility graphs and a weighted Dijkstra search.</p>
+
+<p>One unique feature of Slic3r is the configuration of <strong>different extrusion widths</strong> for each print part (perimeters, infill, support, first layer etc.). This allows fine-grained tuning of the results and it makes the internals very complicated (and a bit slower, like all these features!) since no assumption can be made on widths.</p>
+
+<p>One more unique feature of Slic3r is known as <strong>Extra Perimeters</strong>: this logic automatically increases the number of perimeters in those layers where slopes would expose some of the infill producing suboptimal results. (picture by Michael Andresen)</p>
+
+<p><img src="08.jpg" alt="" /></p>
+
+<p><img src="09.jpg" alt="" /></p>
+
+<p>Slic3r also introduced true, complete, support for <strong>multiple extruders</strong>. While the previous solution was just to slice each material as a separate object and stitch the G-code files afterwards, Slic3r has native support for multimaterial files. It was one of the first applications able to read and write AMF files. It also allowed to use a <strong>secondary extruder for support material</strong>, opening the way to soluble support.</p>
+
+<p><img src="10.jpg" alt="" /></p>
+
+<p>One less known option is <strong>Only Infill Where Needed</strong>: it will detect what upper parts of the object actually require infill for supporting the ceiling. For example, a dome only needs the central part supported: think of it like an internal support material. This saves time and material.</p>
+
+<p><img src="11.jpg" alt="" /></p>
+
+<p><img src="12.jpg" alt="" /></p>
+
+<p>Another original feature is the ability to specify a <strong>different number of top and bottom layers</strong>. This allows, for example, to make vases from solid objects.</p>
+
+<p><img src="13.jpg" alt="" /></p>
+
+<p>There are more less known features. One is <strong>Acceleration control</strong>: Slic3r allows to fine-tune your firmware by assigning different acceleration limits to each part of the print (perimeters, infill, bridges). This is for expert users, though!</p>
+
+<p>Finally, Slic3r introduced an automatic logic for generating <strong>internal bridges over sparse infill</strong>. This greatly improves the quality of top surfaces. There&rsquo;s no option for this: Slic3r does it automatically for you :-)</p>
+
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            <div class="sidebar_box">
+                <h4>Blog archive:</h4>
+
+                <ul>
+                    
+                    <li>
+                        <a href="/blog/new-stable-1.2.9/">Announcing a new stable release: 1.2.9</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/modifier-meshes/">Tutorial: modifier meshes</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/1.5-years-of-slic3r-development/">1.5 years of Slic3r development</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/tip-handling-large-models/">Tip: handling large models</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/tip-bowden-extruders/">Tip: printing with Bowden extruders</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/tip-printing-vases/">Tip: printing vases</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/present-and-future-of-slic3r/">3D printing - present and future of Slic3r</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/a-not-so-short-talk-with-josef-prusa/">A (not so short) talk with Josef Prusa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/here-and-there-in-the-slic3r-community/">Here and there in the Slic3r community</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/blog/the-birth-of-a-slic3r-community/">The birth of a Slic3r community</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+
+			
+		</div>
+		<div class="bottom"></div>
+	</div>
+	
+	<div id="footer" class="page">
+		<p>Slic3r is licensed under the GNU Affero General Public License, version 3<br />
+		    The Slic3r icon was designed by <a href="http://twitter.com/cdugd/">Corey Daniels</a></p>
+		<div class="clear"></div>
+	</div>
+	
+</body>
+</html>

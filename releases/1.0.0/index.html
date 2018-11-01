@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>  
+	<title>Slic3r - 1.0.0</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" type="application/rss+xml" title="Slic3r RSS feed" href="/rss" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+	<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/tan-pink.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.tools.js"></script>
+	<script type="text/javascript" src="/javascripts/fancybox/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="/javascripts/site.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			
+			$("a.screenshot").fancybox({
+			    openEffect	: 'elastic',
+    	        closeEffect	: 'elastic',
+    	        helpers : {
+    		        title : {
+    			        type : 'inside'
+    		        }
+    	        },
+				'overlayShow'	:	false,
+				'beforeLoad'    : function() {
+                    var el, id = $(this.element).data('title-id');
+                    if (id) {
+                        el = $('#' + id);
+                        if (el.length) {
+                            this.title = el.html();
+                        }
+                    }
+                }
+			});
+
+			
+			$(".scrollable").scrollable({ });
+		});
+	</script>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <link type="text/css" href="/inc/jquery/css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div id="header">
+		<div class="page">
+			
+			<a href="/" class="logo"><span>Slic3r</span></a>
+			<div id="subtitle">G-code generator for 3D printers</div>
+			
+			<ul>
+			    <li><a href="/">Home</a></li>
+			    <li><a href="/about">About</a></li>
+			    <li><a href="/download">Download</a></li>
+			    <li><a href="http://manual.slic3r.org/" style="color: red">The Manual</a></li>
+			    
+			        <li><a href="/blog/new-stable-1.2.9/">Blog</a></li>
+			    
+			    <li><a href="/donations">Donate</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div id="page">
+				
+		<div class="top"></div>
+		<div class="content">
+			
+			
+
+    <div class="header page">
+        <h1>
+            Release notes for <b>1.0.0</b> <small>(2014-03-26)</small>
+            
+        </h1>
+    </div>
+    
+    <div class="padding">
+        <div class="left">
+            
+
+<p>(I would like to thank, among others, @stepanb and Microsoft Czech for their support.)</p>
+
+<h4 id="major-new-features">Major new features:</h4>
+
+<ul>
+<li>built-in <strong>automatic STL repair</strong></li>
+<li>OpenGL <strong>3D preview</strong> of the repaired file (thanks to iXce for the initial work); also supports multi-material files</li>
+<li>ability to override individual <strong>config options for each object</strong> in the same print job</li>
+<li><strong>new support material</strong> rewritten from scratch</li>
+
+<li><p>new <strong>Ooze Prevention</strong> feature for multiple extruders (park extruders outside skirt and drop temperature by a specified delta)</p></li>
+
+<li><p>options to avoid starting loops on convex vertices and/or overhangs</p></li>
+
+<li><p><strong>volume calculation</strong></p></li>
+
+<li><p>ability to customize how materials are mapped to extruders</p></li>
+
+<li><p>new First Layer Acceleration option</p></li>
+
+<li><p>new option to use firmware-controlled retraction (G10/G11)</p></li>
+
+<li><p>new option to use a distinct extruder for support material interface</p></li>
+</ul>
+
+<h4 id="improvements">Improvements:</h4>
+
+<ul>
+<li>Slic3r is now <strong>much faster</strong> because many mature parts of code were rewritten in C++ for faster processing and less memory usage (Slic3r is now <strong>40% C++</strong>)</li>
+<li>most of memory is now truly <strong>shared between threads</strong>, reducing the total footprint</li>
+<li><strong>improved infill</strong> patterns and <strong>bridge detection</strong></li>
+<li>the automated test suite was largely enriched</li>
+<li>don&rsquo;t combine retract and travel anymore when using G0 (Mach3 compatibility)</li>
+<li>better Makerbot (Makerware/Sailfish) compatibility</li>
+<li>Windows binaries are now built with Expat for faster AMF parsing</li>
+</ul>
+
+<h4 id="minor-improvements">Minor improvements:</h4>
+
+<ul>
+<li>new [layer_num] placeholder in layer-change G-code</li>
+<li>custom G-code can be supplied via command line too</li>
+<li>some options were renamed or rearranged for clarity</li>
+<li>new &ndash;info command line option to get information about the file</li>
+<li>add .ngc to supported G-code suffixes</li>
+<li>the wizard now saves initial profiles automatically</li>
+<li>automatically copy Simple Mode settings into a &lsquo;Simple Mode&rsquo; preset in Expert Mode</li>
+</ul>
+
+<h4 id="changes">Changes:</h4>
+
+<ul>
+<li>layer height ranges are scaled automatically when object is scaled in plater</li>
+<li>avoid G92 E0 for sailfish output</li>
+<li>the &ldquo;Infill every n layers&rdquo; option was renamed to &ldquo;Combine infill every n layers&rdquo; to clarify its purpose</li>
+</ul>
+
+<h4 id="bugfixes-1-0-0-final">Bugfixes (1.0.0 final):</h4>
+
+<ul>
+<li>crash when using the <em>Infill only where needed</em> option</li>
+<li>bridge speed was not used for the first solid layer above sparse infill</li>
+<li>a few models were sliced incorrectly and had solid bridges in random places</li>
+<li>exporting binary STL files produced corrupt results on Windows</li>
+<li>holes were not sorted using a nearest-neighbor search, resulting in inefficient paths</li>
+<li>crash when user entered Unicode characters in notes</li>
+<li>wrong wiping moves for hole perimeters were calculated for the second copy of an object</li>
+</ul>
+
+<h4 id="bugfixes-1-0-0rc3">Bugfixes (1.0.0RC3):</h4>
+
+<ul>
+<li>facets were completely reversed because of an overflow triggered by STL files with very large coordinates</li>
+<li>rectilinear infill was exceeding perimeters when using very low layer height</li>
+<li>random lack of infill caused by recent changes aimed at reducing memory usage</li>
+<li>incorrect number of raft layers was geenrated when too few were requested</li>
+<li>fatal error in the rare case that a bridge has no valid anchor points</li>
+<li>fatal error when concentric infill generated too tight loops</li>
+<li>spiral vase generated some wrong layers</li>
+<li>when processing with fill_density = 0, top/bottom solid shells were missing regions thinner than three times the extrusion width</li>
+<li>the M73 command used with makerware/sailfish G-code flavor exceeded 100% under certain circumstances</li>
+</ul>
+
+<h4 id="bugfixes-1-0-0rc2">Bugfixes (1.0.0RC2):</h4>
+
+<ul>
+<li>the Windows 64-bit package was missing an OpenGL library</li>
+<li>the Linux packages were missing XML::SAX thus weren&rsquo;t able to load AMF files</li>
+<li>a regression caused all perimeter holes to be completed doing contours instead of finishing one island at time</li>
+<li>retraction restarts ignored the extrusion_axis setting</li>
+<li>objects could not be repositioned in plater after hitting the Split button</li>
+<li>Z moves were skipped after the first object was complete when using Sequential Printing</li>
+<li>objects were incorrectly placed in exported STL files</li>
+<li>fixed a fatal error related to thin walls</li>
+<li>fixed random crashes (mostly visible on 32-bit Windows)</li>
+<li>the Avoid Crossing Perimeters implementation was rewritten in order to fix some regressions and make it faster</li>
+<li>fan wasn&rsquo;t enabled when vibration limit or another internal post-processor was enabled</li>
+<li>raft wasn&rsquo;t generated for the entire object footprint</li>
+<li>thin walls came out as zig-zag paths instead of straight lines</li>
+<li>narrow gaps were not infilled under certain circumstances</li>
+</ul>
+
+<h4 id="bugfixes-1-0-0rc1">Bugfixes (1.0.0RC1):</h4>
+
+<ul>
+<li>several threading issues were fixed</li>
+<li>some situations causing incomplete infill were fixed</li>
+<li>fixed regression causing wrong direction for inwards move in holes, thus little blobs</li>
+<li>fix crash on Windows when username had non-ASCII characters</li>
+<li>some spiral vase prints had little gaps in the loops</li>
+<li>Z-offset was not applied to spiral vase prints</li>
+<li>lift was not working correctly with multiple extruders and multiple skirt layers</li>
+<li>fix speed math for wipe, which was causing too fast retraction</li>
+<li>other minor fixes</li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            <div class="sidebar_box">
+                <h4>Release notes:</h4>
+
+<ul>
+    
+    <li>
+        <a href="/releases/1.2.9/">1.2.9</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.8/">1.2.8</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.7/">1.2.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.6/">1.2.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.5/">1.2.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.4/">1.2.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.3/">1.2.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.2/">1.2.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.1/">1.2.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.7/">1.1.7</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.0/">1.2.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.6/">1.1.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.5/">1.1.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.4/">1.1.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.3/">1.1.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.2/">1.1.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.0.1/">1.0.1</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.1/">1.1.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.0.0/">1.0.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.0/">1.1.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.10b/">0.9.10b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.9/">0.9.9</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.8/">0.9.8</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.7/">0.9.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.5/">0.9.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.4/">0.9.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.3/">0.9.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.2/">0.9.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.1/">0.9.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.0/">0.9.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.4/">0.8.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.3/">0.8.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.1/">0.8.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.2/">0.8.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.2b/">0.7.2b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.2/">0.7.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.1/">0.7.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.0/">0.7.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.6.0/">0.6.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.7/">0.5.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.6/">0.5.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.5b/">0.5.5b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.4/">0.5.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.3/">0.5.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.2/">0.5.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.1/">0.5.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.0/">0.5.0</a>
+        
+    </li>
+    
+</ul>
+
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+
+			
+		</div>
+		<div class="bottom"></div>
+	</div>
+	
+	<div id="footer" class="page">
+		<p>Slic3r is licensed under the GNU Affero General Public License, version 3<br />
+		    The Slic3r icon was designed by <a href="http://twitter.com/cdugd/">Corey Daniels</a></p>
+		<div class="clear"></div>
+	</div>
+	
+</body>
+</html>
