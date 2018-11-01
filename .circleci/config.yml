@@ -31,6 +31,7 @@ jobs:
           root: /tmp/hugo
           paths:
             - public
+            - .circleci
 
   deploy:
     <<: *defaults
