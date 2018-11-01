@@ -39,7 +39,8 @@ jobs:
           at: /tmp/hugo
       
       - add_ssh_keys: *add_ssh_keys
-
+      - checkout:
+          path: /tmp/gh-pages
       - deploy:
           name: Deploy
           command: |
