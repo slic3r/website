@@ -97,15 +97,16 @@ div#header {
 		padding-left: 157px;
 		padding-top: 20px;
 		text-decoration: none;
-		color: #900051;
-	text-shadow: #fbd57d 2px 2px 3px;
-	font-family: 'Orienta', sans-serif;
+		color: #676A00;
+		text-shadow: #fbd57d 2px 2px 3px;
+		font-family: "Dosis";
+		font-weight: 600;
 }
 	#subtitle {
 	position: absolute;
-	top: 89px;
+	top: 94px;
 	left: 160px;
-	font-size: 18px;
+	font-size: 16px;
 }
 	div#header ul {
 		list-style: none;
