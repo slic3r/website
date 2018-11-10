@@ -136,6 +136,7 @@ div#page {
 	div#page .header{ 
 		background: url('../images/page_header.gif') repeat-x top;
 		height: 60px;
+		padding-top: 5px;
 	}
 		div#page .header h1{ padding-left: 30px; padding-top: 5px; }
 		div#page .header ul { list-style: none; float: right; margin-top: -30px; margin-right: 10px; }
@@ -498,7 +499,7 @@ div#blog {}
 	}
 	div#blog span.meta {
 		display: block;
-		margin: 5px 0px 5px 0px;
+		margin: 5px 0px 25px 0px;
 		color: #999;
 	}
 	div#blog .blog_img {
@@ -515,7 +516,7 @@ div#blog {}
 	}
 	div#blog .content div, div#blog .content p {
 		margin-bottom:  10px;
-		line-height: 160%;
+		line-height: 140%;
 }
 	div#blog .content h2 {
 	    margin-top: 15px;
@@ -546,7 +547,6 @@ h1 {
 	font-size: 26px;
 	font-weight: normal;
 	color: #5f5f5f;
-	letter-spacing: -0.02em;
 }
 h2 {
 	font-size: 23px;
