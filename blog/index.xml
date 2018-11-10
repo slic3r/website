@@ -2,50 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Slic3r</title>
-    <link>http://slic3r.org/blog/</link>
+    <link>https://slic3r.org/blog/</link>
     <description>Recent content in Blogs on Slic3r</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 19 Jun 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://slic3r.org/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://slic3r.org/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Announcing a new stable release: 1.2.9</title>
-      <link>http://slic3r.org/blog/new-stable-1.2.9/</link>
+      <link>https://slic3r.org/blog/new-stable-1.2.9/</link>
       <pubDate>Fri, 19 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://slic3r.org/blog/new-stable-1.2.9/</guid>
+      <guid>https://slic3r.org/blog/new-stable-1.2.9/</guid>
       <description>After 10 months of work we&amp;rsquo;re proud to announce a new Slic3r stable release.
 The Slic3r project was born in 2011 within the RepRap community as an effort to provide the growing 3D printing technology with an open and flexible toolchain. Slic3r, being a true non-profit community project, allowed the community to experiment with several original new features that have become common thereafter such as multiple extruders, brim, microlayering, bridge detection, command line slicing, variable layer heights, sequential printing (one object at time), honeycomb infill, mesh cutting, object splitting into parts, AMF support, avoid crossing perimeters, distinct extrusion widths, and much more.</description>
     </item>
     
     <item>
       <title>Tutorial: modifier meshes</title>
-      <link>http://slic3r.org/blog/modifier-meshes/</link>
+      <link>https://slic3r.org/blog/modifier-meshes/</link>
       <pubDate>Fri, 07 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://slic3r.org/blog/modifier-meshes/</guid>
+      <guid>https://slic3r.org/blog/modifier-meshes/</guid>
       <description>We&amp;rsquo;ll go through one of the most advanced features of Slic3r: the ability to use modifier meshes for applying distinct settings to object parts. Infact Slic3r allows users to define regions where the print settings should be overridden by distinct settings.
 Some time ago I decided to design an ukulele that could be printed on a RepRap. I also called JonTom, a world-famous ukulele player for getting a review of it.</description>
     </item>
     
     <item>
       <title>1.5 years of Slic3r development</title>
-      <link>http://slic3r.org/blog/1.5-years-of-slic3r-development/</link>
+      <link>https://slic3r.org/blog/1.5-years-of-slic3r-development/</link>
       <pubDate>Sun, 30 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://slic3r.org/blog/1.5-years-of-slic3r-development/</guid>
+      <guid>https://slic3r.org/blog/1.5-years-of-slic3r-development/</guid>
       <description>Slic3r was born in late 2011 as an attempt to modernize the 3D printing toolchain. It simplified slicing by reducing configuration to just three options (nozzle diameter, filament diameter, temperature) and it also made slicing a lot faster - but speed wasn&amp;rsquo;t the main goal. The goal was to have clean, structured code for prototyping new features and getting a powerful slicing engine. This is why Slic3r uses C++ code for the hardcore geometric processing, while it keeps higher-level logic in a flexible language such as Perl.</description>
     </item>
     
     <item>
       <title>Tip: handling large models</title>
-      <link>http://slic3r.org/blog/tip-handling-large-models/</link>
+      <link>https://slic3r.org/blog/tip-handling-large-models/</link>
       <pubDate>Sun, 05 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://slic3r.org/blog/tip-handling-large-models/</guid>
+      <guid>https://slic3r.org/blog/tip-handling-large-models/</guid>
       <description>Let&amp;rsquo;s see some things you can do to avoid problems or even crashes when trying to print large, detailed, heavy models. Detailed models contain a lot of vertices and Slic3r will use more memory to handle them; sometimes such needed memory is more than your physical system memory.
 First off, make sure you&amp;rsquo;re using Slic3r 0.9.10 or newer, as their memory usage was reduced enormously.
 The first thing you can to is to reduce the number of vertices/facts in your model: if your file has more than 300k facets, it&amp;rsquo;s very likely way more detailed than you can achieve using your printer.</description>
@@ -53,10 +53,10 @@ The first thing you can to is to reduce the number of vertices/facts in your mod
     
     <item>
       <title>Tip: printing with Bowden extruders</title>
-      <link>http://slic3r.org/blog/tip-bowden-extruders/</link>
+      <link>https://slic3r.org/blog/tip-bowden-extruders/</link>
       <pubDate>Sat, 30 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://slic3r.org/blog/tip-bowden-extruders/</guid>
+      <guid>https://slic3r.org/blog/tip-bowden-extruders/</guid>
       <description>I learned that the main goal with Bowden extruders is to reduce the number of retractions in a print. Even fast and long retractions often leave blobs, so we have to fight those.
 Slic3r 0.9.9 contains a number of features for that purpose. Here are the recommended settings:
  avoid crossing perimeters (Print Settings): on only retract when crossing perimeters (Print Settings): on retract on layer change (Printer Settings): off  The first setting will also cause Slic3r to finish each island completely before moving to the next one, reducing the need for retraction.</description>
@@ -64,30 +64,30 @@ Slic3r 0.9.9 contains a number of features for that purpose. Here are the recomm
     
     <item>
       <title>Tip: printing vases</title>
-      <link>http://slic3r.org/blog/tip-printing-vases/</link>
+      <link>https://slic3r.org/blog/tip-printing-vases/</link>
       <pubDate>Sun, 24 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://slic3r.org/blog/tip-printing-vases/</guid>
+      <guid>https://slic3r.org/blog/tip-printing-vases/</guid>
       <description>The Top solid layers option in Slic3r allows to print vases from simple solid models. This means that you don&amp;rsquo;t need to hollow out your models manually, which can be a timeconsuming task and often requires features that basic modeling packages don&amp;rsquo;t offer.
 The trick is just to set Top solid layers to 0 and Infill density to 0 - voila, your solid will be printed with just its sides and the bottom surface.</description>
     </item>
     
     <item>
       <title>3D printing - present and future of Slic3r</title>
-      <link>http://slic3r.org/blog/present-and-future-of-slic3r/</link>
+      <link>https://slic3r.org/blog/present-and-future-of-slic3r/</link>
       <pubDate>Sun, 16 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://slic3r.org/blog/present-and-future-of-slic3r/</guid>
+      <guid>https://slic3r.org/blog/present-and-future-of-slic3r/</guid>
       <description>Andrew Mazzotta, newyorker filmmaker, visited me to record one episode of his &amp;ldquo;3D Printing Adventures&amp;rdquo;. We had a chat about present and future of Slic3r and 3D printing.
  Andrew, thanks for visiting!</description>
     </item>
     
     <item>
       <title>A (not so short) talk with Josef Prusa</title>
-      <link>http://slic3r.org/blog/a-not-so-short-talk-with-josef-prusa/</link>
+      <link>https://slic3r.org/blog/a-not-so-short-talk-with-josef-prusa/</link>
       <pubDate>Mon, 10 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://slic3r.org/blog/a-not-so-short-talk-with-josef-prusa/</guid>
+      <guid>https://slic3r.org/blog/a-not-so-short-talk-with-josef-prusa/</guid>
       <description>I recently visited Josef Prusa in Prague (yes, that Josef Prusa: the world-known author of the Prusa Mendel printer and RepRap core developer).
 We recorded a talk about many topics including Slic3r, 3D printing, community, funding, bad vendors and open development. Check it out!
 
@@ -96,10 +96,10 @@ We recorded a talk about many topics including Slic3r, 3D printing, community, f
     
     <item>
       <title>Here and there in the Slic3r community</title>
-      <link>http://slic3r.org/blog/here-and-there-in-the-slic3r-community/</link>
+      <link>https://slic3r.org/blog/here-and-there-in-the-slic3r-community/</link>
       <pubDate>Fri, 06 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://slic3r.org/blog/here-and-there-in-the-slic3r-community/</guid>
+      <guid>https://slic3r.org/blog/here-and-there-in-the-slic3r-community/</guid>
       <description>Okay, Slic3r was born in September and in a few months I was able to bring it beyond what I expected, in terms of features, speed and stability. Things have started to change very quickly, and community is playing a big role in testing and discussing new features.
 A Slic3r forum was created in the official RepRap forums. Also, about 50 people sit in the FreeNode IRC #slic3r channel.
 Some notable things appeared in the web recently.</description>
@@ -107,10 +107,10 @@ Some notable things appeared in the web recently.</description>
     
     <item>
       <title>The birth of a Slic3r community</title>
-      <link>http://slic3r.org/blog/the-birth-of-a-slic3r-community/</link>
+      <link>https://slic3r.org/blog/the-birth-of-a-slic3r-community/</link>
       <pubDate>Sat, 12 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://slic3r.org/blog/the-birth-of-a-slic3r-community/</guid>
+      <guid>https://slic3r.org/blog/the-birth-of-a-slic3r-community/</guid>
       <description>Here we are. After two months since I started to write this software from scratch, there are many people enjoying using it. And I&amp;rsquo;m enjoying to receive their feedback!
 Tech Paladin published a post entitled Slic3r 0wns with some pictures:
 Joachim Glauche, owner of RepRapSource.com and creator of the ShaperCube published some pictures of nice high-resolution prints sliced thanks to the speed and accuracy of Slic3r.
