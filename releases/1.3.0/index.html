@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>  
+	<title>Slic3r - 1.3.0</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" type="application/rss+xml" title="Slic3r RSS feed" href="/rss" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+	<link rel="stylesheet" type="text/css" href="/javascripts/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/tan-pink.css" media="screen" />
+	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <script type="text/javascript" src="/inc/jquery/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.tools.js"></script>
+	<script type="text/javascript" src="/javascripts/fancybox/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="/javascripts/site.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			
+			$("a.screenshot").fancybox({
+			    openEffect	: 'elastic',
+    	        closeEffect	: 'elastic',
+    	        helpers : {
+    		        title : {
+    			        type : 'inside'
+    		        }
+    	        },
+				'overlayShow'	:	false,
+				'beforeLoad'    : function() {
+                    var el, id = $(this.element).data('title-id');
+                    if (id) {
+                        el = $('#' + id);
+                        if (el.length) {
+                            this.title = el.html();
+                        }
+                    }
+                }
+			});
+
+			
+			$(".scrollable").scrollable({ });
+		});
+	</script>
+    <script type="text/javascript" src="/inc/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <link type="text/css" href="/inc/jquery/css/ui-darkness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div id="header">
+		<div class="page">
+			
+			<a href="/" class="logo"><span>Slic3r</span></a>
+			<div id="subtitle">Open source 3D printing toolbox</div>
+			
+			<ul>
+			    <li><a href="/">Home</a></li>
+			    <li><a href="/about">About</a></li>
+			    <li><a href="/download">Download</a></li>
+			    <li><a href="https://manual.slic3r.org/" style="color: red">The Manual</a></li>
+			    
+			        <li><a href="/blog/new-stable-1.2.9/">Blog</a></li>
+			    
+			    <li><a href="/donations">Donate</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div id="page">
+				
+		<div class="top"></div>
+		<div class="content">
+			
+			
+
+    <div class="header page">
+        <h1>
+            Release notes for <b>1.3.0</b> <small>(2018-05-10)</small>
+            
+        </h1>
+    </div>
+    
+    <div class="padding">
+        <div class="left">
+            
+
+<p>A new version, finally! Despite the long time since the last versioned release, work on Slic3r has never stopped. Daily automated builds are available on this website, so this release is not entirely new for all people who have been following development.</p>
+
+<p>This release was curated by Joseph Lenox (Lordofhyphens).</p>
+
+<p>Please <a href="https://github.com/slic3r/Slic3r/issues">join the discussion</a> on GitHub and report issues and ideas.</p>
+
+<h4 id="new-features">New features:</h4>
+
+<ul>
+<li><strong>Controller</strong>: print via USB directly from Slic3r! Spool your prints in a queue and print to multiple printers at the same time.</li>
+<li><strong>3MF</strong> format read/write (<a href="https://github.com/slic3r/Slic3r/pull/4046">#4046</a>)</li>
+<li>Experimental support for <strong>SLA/DLP</strong> machines (USB/video output)</li>
+<li><strong>Bonjour</strong> detection of Octoprint instances</li>
+<li>Custom G-code now can have some <strong>logic and math</strong>, see <a href="https://manual.slic3r.org/advanced/conditional-gcode">the manual</a> (<a href="https://github.com/slic3r/Slic3r/issues/3390">#3390</a>)</li>
+<li><strong>Solarized color scheme</strong> now available. (<a href="https://github.com/slic3r/Slic3r/pull/4322">#4322</a>)</li>
+<li>Support for long retracts (Marlin/Repetier)</li>
+<li><strong>New infill patterns</strong>: gyroid, cubic, stars Infill pattern (<a href="https://github.com/slic3r/Slic3r/issues/3666">#3666</a>)</li>
+<li><strong>Adaptive Slicing</strong> (let Slic3r vary the layer thickness according to the slopes in the model) (<a href="https://github.com/slic3r/Slic3r/pull/1386">#1386</a>)</li>
+<li>You can now nudge/move models with the keyboard arrows in the 2D plater. (<a href="https://github.com/slic3r/Slic3r/issues/4102">#4102</a>)</li>
+<li><strong>Generic modifier meshes</strong> &ndash; the powerful and well-known modifier meshes, already available in Slic3r, can be now created and positioned directly from the visual interface of Slic3r without the need for an external CAD program! (<a href="https://github.com/slic3r/Slic3r/pull/3590">#3590</a>)</li>
+<li>Option to force M190/M109 for extruder and bed heater</li>
+<li>You can turn off automatic centering and alignment in Z.</li>
+<li>Optimistic <strong>time estimation</strong> for prints. (<a href="https://github.com/slic3r/Slic3r/pull/3747">#3747</a>)</li>
+<li>Slic3r will now tell you <strong>cost of material</strong> used after exporting Gcode (<a href="https://github.com/slic3r/Slic3r/pull/3669">°3669</a>)</li>
+<li>Linux AppImage and tarball builds.</li>
+<li><strong>Undo/Redo</strong> for rotate, mirror, split, cut (<a href="https://github.com/slic3r/Slic3r/issues/3265">#3265</a>)</li>
+<li>Custom G-code can now be entered for between objects in sequential object mode.</li>
+<li>Reprapfirmware/Duet print server support (<a href="https://github.com/slic3r/Slic3r/pull/4028">#4028</a>)</li>
+<li>Custom G-code can be set for filament profiles. Its start G-code is placed after printer start G-code and its end G-code is placed before printer end G-code. (<a href="https://github.com/slic3r/Slic3r/issues/3309">#3309</a>)</li>
+<li>Slic3r now can limit your print speed to a given <strong>volumetric</strong> amount.</li>
+<li><strong>Autospeed</strong>: Slic3r manages the print to maintain <strong>constant flow rate</strong>. Should result in fewer needed retractions.</li>
+<li>Support can now be restricted to only areas that touch the build plate.</li>
+<li>Support material generation now allows for % of perimeter width for overhang.</li>
+<li>Average Print speed in mm^3/s is now output in gcode.</li>
+<li>&ldquo;Move to bed center&rdquo; option in object menu.</li>
+<li>Experimental option z_steps_per_mm to have slic3r auto-align layer height to integer Z steps. (<a href="https://github.com/slic3r/Slic3r/issues/1827">#1827</a>)</li>
+<li><strong>Top and bottom fill pattern</strong> can now be specified separately.</li>
+<li>Brim can now be specified for inside holes.</li>
+<li>Seams can now be specified in &ldquo;rear&rdquo; position.</li>
+<li>Detect thin walls can produce variable-thickness perimeters now in some situations.</li>
+<li><strong>Brim connections</strong></li>
+<li>Bed temperature can now be specified at 0.</li>
+<li>New option to tell Slic3r if your printer has a heatbed (and whether or not to bother putting bed heat gcode in).</li>
+<li><strong>Smoothieware</strong> G-code flavor (primarily affects retraction) (<a href="https://github.com/slic3r/Slic3r/pull/3373">#3373</a>)</li>
+<li>You can now specify some overrides for Printer settings from Filament. (<a href="https://github.com/slic3r/Slic3r/pull/3770">#3770</a>)</li>
+<li>The pattern angle for rafts is now configurable.</li>
+<li>Doxygen-generated documentation for <strong>libslic3r</strong>.</li>
+<li>Print and filament profiles can be marked as compatible with specific printer profiles. (<a href="https://github.com/slic3r/Slic3r/pull/3770">#3770</a>)</li>
+</ul>
+
+<h4 id="improvements">Improvements</h4>
+
+<ul>
+<li>New build/packaging system for Windows</li>
+<li>New build/packaging system for OSX</li>
+<li>Configuration options shortcuts are available in the main plater (<a href="https://github.com/slic3r/Slic3r/pull/3912">#3912</a>)</li>
+<li>More code was ported to C++, including infill, bridge detection, cooling, GCodeReader and SpiralVase</li>
+<li>Antialiasing for the plater. (<a href="https://github.com/slic3r/Slic3r/pull/3343">#3343</a>)</li>
+<li>Switching to the 3D Preview now starts a slice if background processing is off.</li>
+<li>Gap fill is much, much smarter now.</li>
+<li>Rectilinear fill has been improved.</li>
+<li>External perimeters are not slowed down even more if possible.</li>
+<li>Lots of things are done in parallel in libslic3r.</li>
+<li>Speed improvements in some cases.</li>
+<li>If auto-arrange fails, ignore bed shape.</li>
+<li>Speed settings now default to &ldquo;auto&rdquo; instead of &ldquo;0&rdquo; (same behavior, but more clear)</li>
+<li>small_perimeter_speed is now ignored for overhangs.</li>
+<li>Slic3r warns you when objects are outside of the print bed area.</li>
+<li>UI: You can zoom without the mousewheel now. (<a href="https://github.com/slic3r/Slic3r/issues/3233">#3233</a>)</li>
+<li>MotionPlanner should be much smarter now.</li>
+<li>Mac Retina displays are now supported. (<a href="https://github.com/slic3r/Slic3r/issues/2888">#2888</a>)</li>
+<li>Numerous C++11 related code cleanup.</li>
+<li>Bridge detection is improved</li>
+</ul>
+
+<h4 id="changes">Changes</h4>
+
+<ul>
+<li>Simple/Expert Mode is no more, we are all experts now.</li>
+</ul>
+
+<h4 id="bugfix">Bugfix</h4>
+
+<ul>
+<li>External perimeters are now chosen to be 1.1*(nozzle width) when using auto.</li>
+<li>3D Honeycomb Infill switches</li>
+<li>Brims are now nudged slightly closer to models.</li>
+<li>DLP SVG export works now. (<a href="https://github.com/slic3r/Slic3r/issues/4311">#4311</a>)</li>
+<li>Setting acceleration for reprapfirmware works now.</li>
+<li>STL imports in big-endian architectures works now. (<a href="https://github.com/slic3r/Slic3r/pull/4143">#4143</a>)</li>
+<li>Several crash bugs have been fixed, especially around custom gcode handling.</li>
+<li>Bridging should be improved when there are narrow gaps under bridge anchors.</li>
+<li>Scaling objects with multiple copies in the plater should now be consistent.</li>
+<li>Fixes to background processing.</li>
+<li>flowrate.pl now handles negative coordinates.</li>
+<li>Windows build shouldn&rsquo;t hang forever on a C++ Exception</li>
+<li>Fewer copies are made when multi-object AMF files are converted to a multi-part onject</li>
+<li>solid_infill_below_area is ignored when fill_density is 100%</li>
+<li>Title labels for the layer height editor aren&rsquo;t cut off.</li>
+<li>Correct extruder order should be used now if more than 10 extruders are used. (<a href="https://github.com/slic3r/Slic3r/issues/3235">#3235</a>)</li>
+<li>If there is a raft, print brims using the support material extruder.</li>
+<li>Auto width now does not assume your hotend can produce infinitely wide traces.</li>
+<li>Mousewheel zoom is now consistent.</li>
+<li>Diagonal gaps (due to slopes) should now properly place extra perimeters.</li>
+<li>Trimmed down the axis lengths on the plater.</li>
+<li>Temperature standby works now on Makerbot/Sailfish firmware</li>
+<li>Nonexistant config options should not cause Slic3r to crash (instead it just ignores them)</li>
+<li>Variable-width perimeters can&rsquo;t cause negative extrusion.</li>
+<li>Combined infill (infill-every-n-layers) now correctly draws thicker infill than perimeters.</li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+        
+        <div class="right">
+            <div class="sidebar_box">
+                <h4>Release notes:</h4>
+
+<ul>
+    
+    <li>
+        <a href="/releases/1.3.0/">1.3.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.9/">1.2.9</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.8/">1.2.8</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.7/">1.2.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.6/">1.2.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.5/">1.2.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.4/">1.2.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.3/">1.2.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.2/">1.2.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.1/">1.2.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.7/">1.1.7</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.2.0/">1.2.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.6/">1.1.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.5/">1.1.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.4/">1.1.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.3/">1.1.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.2/">1.1.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.0.1/">1.0.1</a>
+        
+            [stable]
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.1/">1.1.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.0.0/">1.0.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/1.1.0/">1.1.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.10b/">0.9.10b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.9/">0.9.9</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.8/">0.9.8</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.7/">0.9.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.5/">0.9.5</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.4/">0.9.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.3/">0.9.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.2/">0.9.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.1/">0.9.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.9.0/">0.9.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.4/">0.8.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.3/">0.8.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.1/">0.8.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.8.2/">0.8.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.2b/">0.7.2b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.2/">0.7.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.1/">0.7.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.7.0/">0.7.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.6.0/">0.6.0</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.7/">0.5.7</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.6/">0.5.6</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.5b/">0.5.5b</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.4/">0.5.4</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.3/">0.5.3</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.2/">0.5.2</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.1/">0.5.1</a>
+        
+    </li>
+    
+    <li>
+        <a href="/releases/0.5.0/">0.5.0</a>
+        
+    </li>
+    
+</ul>
+
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+
+			
+		</div>
+		<div class="bottom"></div>
+	</div>
+	
+	<div id="footer" class="page">
+		<p>Slic3r is licensed under the GNU Affero General Public License, version 3<br />
+		    The Slic3r icon was designed by <a href="https://twitter.com/cdugd/">Corey Daniels</a></p>
+		<div class="clear"></div>
+	</div>
+	
+</body>
+</html>
