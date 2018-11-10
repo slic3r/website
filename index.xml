@@ -648,9 +648,9 @@ OpenHub estimates the total cost of having developed Slic3r so far (although thi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://slic3r.org/download/</guid>
-      <description>Stable version Click on your operating system to download the precompiled packages:
+      <description>Most recent official release Click on your operating system to download the precompiled package:
   macOS   Windows   Linux      Note for Linux users: you need to install the freeglut package provided by your distro.
-Development version (automated fresh builds) Click on your operating system to download the precompiled packages generated automatically with the current snapshot of the master branch:
+Development version (automated fresh builds) Click on your operating system to download the precompiled package generated automatically with the current snapshot of the master branch:
   macOS   Windows   Linux      Source code If you want to compile from the source code for hacking or contributing to the development you can clone the project from the GitHub repository.</description>
     </item>
     
