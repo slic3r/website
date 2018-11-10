@@ -1,5 +1,5 @@
 ---
-opening: Stay tuned for 1.3.0!
+opening: 1.3.0 was released!
 resources:
 - src: "gallery-01.jpg"
   title: "Auto-repair of non-manifold meshes"
@@ -25,8 +25,6 @@ resources:
   title: ""
 ---
 
-The Slic3r project has been under active and massive development since the last release, 
-and we plan to release 1.3.0 in 2017 Q4. In the mean time we have automated fresh builds, 
-so [get one now](/download)!
+The Slic3r project has been under active and massive development. Make sure you [get 1.3.0 now](/download) or try the development builds!
 
-*[Read the full release notes for 1.2.9](/blog/new-stable-1.2.9)*
+*[Read the full release notes for 1.3.0](/releases/1.3.0)*
