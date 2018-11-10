@@ -6,10 +6,20 @@
     <description>Recent content in Blogs on Slic3r</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jun 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://slic3r.org/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GitHub repository moved to github.com/slic3r</title>
+      <link>https://slic3r.org/blog/slic3r-github-org/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://slic3r.org/blog/slic3r-github-org/</guid>
+      <description>As of March 2018, the Slic3r repositories hosting the main codebase and the manual were moved to the https://github.com/slic3r organization account. GitHub provides redirects for all the existing URLs so nothing broke because of this.
+Since the birth of the project, the code was hosted in my personal account. However Slic3r has grown far beyond a personal project this change was necessary for giving it the necessary independence that a mature open source project requires.</description>
+    </item>
     
     <item>
       <title>Announcing a new stable release: 1.2.9</title>
