@@ -3,9 +3,9 @@ title: "Download"
 sideboxes: [releases]
 ---
 
-## Stable version
+## Most recent official release
 
-Click on your operating system to download the precompiled packages:
+Click on your operating system to download the precompiled package:
 
 <table border="0" width="100%" class="download">
     <tbody>
@@ -36,7 +36,7 @@ Click on your operating system to download the precompiled packages:
 
 ## Development version (automated fresh builds)
 
-Click on your operating system to download the precompiled packages generated automatically with the current snapshot of the master branch:
+Click on your operating system to download the precompiled package generated automatically with the current snapshot of the master branch:
 
 <table border="0" width="100%" class="download">
     <tbody>
