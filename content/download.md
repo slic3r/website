@@ -7,25 +7,24 @@ sideboxes: [releases]
 
 Click on your operating system to download the precompiled packages:
 
-<table border="0" width="100%" style="margin: 30px 0">
+<table border="0" width="100%" class="download">
     <tbody>
         <tr>
-            <td width="33%" style="text-align: center; vertical-align: top">
+            <td width="33%">
                 <a href="https://dl.slic3r.org/mac/">
-                    <img src="/img/mac_icon.gif" width="60" height="60"><br />
+                    <img src="/img/mac_icon.png"><br />
                     <strong>macOS</strong>
                 </a>
-                <br />(10.6+)
             </td>
-            <td width="33%" style="text-align: center; vertical-align: top">
+            <td width="33%">
                 <a href="https://dl.slic3r.org/win/">
-                    <img src="/img/win_icon.png" width="60" height="60"><br />
+                    <img src="/img/win_icon.png"><br />
                     <strong>Windows</strong>
                 </a>
             </td>
-            <td width="33%" style="text-align: center; vertical-align: top">
+            <td width="33%">
                 <a href="https://dl.slic3r.org/linux/">
-                    <img src="/img/linux_icon.png" width="60" height="60"><br />
+                    <img src="/img/linux_icon.png"><br />
                     <strong>Linux</strong>
                 </a>
             </td>
@@ -33,32 +32,30 @@ Click on your operating system to download the precompiled packages:
     </tbody>
 </table>
 
-**Note for Linux users:** you need to install the `freeglut` package provided by your distro.
+<small>**Note for Linux users:** you need to install the `freeglut` package provided by your distro.</small>
 
 ## Development version (automated fresh builds)
 
-*RECOMMENDED!* Click on your operating system to download the precompiled packages, 
-which are up-to-date with development:
+Click on your operating system to download the precompiled packages generated automatically with the current snapshot of the master branch:
 
-<table border="0" width="100%" style="margin: 30px 0">
+<table border="0" width="100%" class="download">
     <tbody>
         <tr>
-            <td width="33%" style="text-align: center; vertical-align: top">
+            <td width="33%">
                 <a href="https://dl.slic3r.org/dev/mac/">
-                    <img src="/img/mac_icon.gif" width="60" height="60"><br />
+                    <img src="/img/mac_icon.png"><br />
                     <strong>macOS</strong>
                 </a>
-                <br />(10.7+)
             </td>
-            <td width="33%" style="text-align: center; vertical-align: top">
+            <td width="33%">
                 <a href="https://dl.slic3r.org/dev/win/">
-                    <img src="/img/win_icon.png" width="60" height="60"><br />
+                    <img src="/img/win_icon.png"><br />
                     <strong>Windows</strong>
                 </a>
             </td>
-            <td width="33%" style="text-align: center; vertical-align: top">
+            <td width="33%">
                 <a href="https://dl.slic3r.org/dev/linux/">
-                    <img src="/img/linux_icon.png" width="60" height="60"><br />
+                    <img src="/img/linux_icon.png"><br />
                     <strong>Linux</strong>
                 </a>
             </td>
