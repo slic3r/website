@@ -14,6 +14,6 @@ Joachim Glauche, owner of [RepRapSource.com](http://www.reprapsource.com/) and 
 
 ![](02.jpg)
 
-Some people printed the same object with Slic3r and Skeinforge and published pictures with the comparison: see [this picture](http://www.flickr.com/photos/blue_metal/6341424872) by Blue_Metal, [this one](http://www.flickr.com/photos/13659531@N03/6334203975/) by John Ridley. Also, see [this picture](http://www.flickr.com/photos/rgoodwin/6338090839/) by Richard Goodwin.
+Some people printed the same object with Slic3r and Skeinforge and published pictures with the comparison: see [this picture](https://www.flickr.com/photos/blue_metal/6341424872) by Blue_Metal, [this one](https://www.flickr.com/photos/13659531@N03/6334203975/) by John Ridley. Also, see [this picture](https://www.flickr.com/photos/rgoodwin/6338090839/) by Richard Goodwin.
 
-There are also a couple YouTube videos: [this](http://www.youtube.com/watch?v=0r3hgcKZIVs) and [that](http://www.youtube.com/watch?v=xjpbObDwwcI).
+There are also a couple YouTube videos: [this](https://www.youtube.com/watch?v=0r3hgcKZIVs) and [that](https://www.youtube.com/watch?v=xjpbObDwwcI).

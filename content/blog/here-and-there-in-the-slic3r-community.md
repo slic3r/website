@@ -6,7 +6,7 @@ author: Alessandro Ranellucci
 
 Okay, Slic3r was born in September and in a few months I was able to bring it beyond what I expected, in terms of features, speed and stability. Things have started to **change very quickly**, and **community** is playing a big role in testing and discussing new features.
 
-A [**Slic3r forum**](http://forums.reprap.org/list.php?263) was created in the official RepRap forums. Also, about 50 people sit in the [FreeNode](http://webchat.freenode.net/) IRC #slic3r channel.
+A [**Slic3r forum**](https://forums.reprap.org/list.php?263) was created in the official RepRap forums. Also, about 50 people sit in the [FreeNode](https://webchat.freenode.net/) IRC #slic3r channel.
 
 Some notable things appeared in the web recently. Neil Underwood (well known as [Spacexula](http://repraplogphase.blogspot.com/)) posted pictures and a video of a print he did on the [official RepRap blog](http://blog.reprap.org/2011/12/001-layer-height-on-prusa-mendel.html). The first outstanding thing is that he reached a**0.01mm layer height**. The second outstanding thing is that **he used Slic3r**!
 

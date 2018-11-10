@@ -11,20 +11,20 @@ Click on your operating system to download the precompiled packages:
     <tbody>
         <tr>
             <td width="33%" style="text-align: center; vertical-align: top">
-                <a href="http://dl.slic3r.org/mac/">
+                <a href="https://dl.slic3r.org/mac/">
                     <img src="/img/mac_icon.gif" width="60" height="60"><br />
                     <strong>macOS</strong>
                 </a>
                 <br />(10.6+)
             </td>
             <td width="33%" style="text-align: center; vertical-align: top">
-                <a href="http://dl.slic3r.org/win/">
+                <a href="https://dl.slic3r.org/win/">
                     <img src="/img/win_icon.png" width="60" height="60"><br />
                     <strong>Windows</strong>
                 </a>
             </td>
             <td width="33%" style="text-align: center; vertical-align: top">
-                <a href="http://dl.slic3r.org/linux/">
+                <a href="https://dl.slic3r.org/linux/">
                     <img src="/img/linux_icon.png" width="60" height="60"><br />
                     <strong>Linux</strong>
                 </a>
@@ -44,20 +44,20 @@ which are up-to-date with development:
     <tbody>
         <tr>
             <td width="33%" style="text-align: center; vertical-align: top">
-                <a href="http://dl.slic3r.org/dev/mac/">
+                <a href="https://dl.slic3r.org/dev/mac/">
                     <img src="/img/mac_icon.gif" width="60" height="60"><br />
                     <strong>macOS</strong>
                 </a>
                 <br />(10.7+)
             </td>
             <td width="33%" style="text-align: center; vertical-align: top">
-                <a href="http://dl.slic3r.org/dev/win/">
+                <a href="https://dl.slic3r.org/dev/win/">
                     <img src="/img/win_icon.png" width="60" height="60"><br />
                     <strong>Windows</strong>
                 </a>
             </td>
             <td width="33%" style="text-align: center; vertical-align: top">
-                <a href="http://dl.slic3r.org/dev/linux/">
+                <a href="https://dl.slic3r.org/dev/linux/">
                     <img src="/img/linux_icon.png" width="60" height="60"><br />
                     <strong>Linux</strong>
                 </a>

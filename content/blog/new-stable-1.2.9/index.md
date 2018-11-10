@@ -47,7 +47,7 @@ Thanks to David Eccles (gringer) we now have the first infill pattern that varie
 
 ## Integration with OctoPrint
 
-Slice and upload to [OctoPrint](http://octoprint.org/) with a single click directly from Slic3r: this is a handy workflow for people using Slic3r together with the popular web-based print server. Configuration is very easy thanks to the Bonjour autodiscovery.
+Slice and upload to [OctoPrint](https://octoprint.org/) with a single click directly from Slic3r: this is a handy workflow for people using Slic3r together with the popular web-based print server. Configuration is very easy thanks to the Bonjour autodiscovery.
 
 ![](08.jpg)
 
@@ -61,7 +61,7 @@ Thanks to a contextual menu, objects can be manipulated in all axes (X/Y/Z) befo
 
 ## XY Size Compensation option
 
-In order to **fight dimensional issues**, a new option was added like in most CNC/CAM applications. If you find a dimensional error in a printed object, just measure the error and put the negative value in this option: Slic3r will compensate for it. For more information, please [read this manual page](http://manual.slic3r.org/troubleshooting/dimension-errors).
+In order to **fight dimensional issues**, a new option was added like in most CNC/CAM applications. If you find a dimensional error in a printed object, just measure the error and put the negative value in this option: Slic3r will compensate for it. For more information, please [read this manual page](https://manual.slic3r.org/troubleshooting/dimension-errors).
 
 ## Many more advanced options
 

@@ -12,7 +12,7 @@ You can then use the _**Bottom solid layers**_ and _**Perimeters**_ options to 
 
 This trick also enables **faster slicing**, because Slic3r won't need to use its thinwall/medial axis algorithm to collapse the walls into single traces.
 
-So, when you find that sexy vase on Thingiverse be sure to check whether a solid version is available - if so, use that instead of the one that is already hollowed out (for example, the [Twisted Heart Vase](http://www.thingiverse.com/thing:42570) provides both). If not, you can use a tool like [Meshlab](http://meshlab.sourceforge.net/) or [Netfabb Studio Basic](http://www.netfabb.com/download.php) to fill the holes like I did for the [Tornado](http://www.thingiverse.com/thing:33344).
+So, when you find that sexy vase on Thingiverse be sure to check whether a solid version is available - if so, use that instead of the one that is already hollowed out (for example, the [Twisted Heart Vase](https://www.thingiverse.com/thing:42570) provides both). If not, you can use a tool like [Meshlab](http://meshlab.sourceforge.net/) or [Netfabb Studio Basic](http://www.netfabb.com/download.php) to fill the holes like I did for the [Tornado](https://www.thingiverse.com/thing:33344).
 
 ![](01.jpg) ![](02.jpg)
 

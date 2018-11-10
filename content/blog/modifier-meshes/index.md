@@ -6,7 +6,7 @@ author: Alessandro Ranellucci
 
 We'll go through one of the most advanced features of Slic3r: the ability to use **modifier meshes** for applying **distinct settings to object parts**. Infact Slic3r allows users to define regions where the print settings should be overridden by distinct settings.
 
-Some time ago I decided to design an [ukulele](http://www.thingiverse.com/thing:199298) that could be printed on a RepRap. I also called [JonTom](http://www.jontom.net), a world-famous ukulele player for getting a review of it. You might want to enjoy the [YouTube video](http://www.youtube.com/watch?v=Zw4zUevnqRQ) about it.
+Some time ago I decided to design an [ukulele](https://www.thingiverse.com/thing:199298) that could be printed on a RepRap. I also called [JonTom](http://www.jontom.net), a world-famous ukulele player for getting a review of it. You might want to enjoy the [YouTube video](https://www.youtube.com/watch?v=Zw4zUevnqRQ) about it.
 
 ![](01.jpg)
 
