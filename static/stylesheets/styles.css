@@ -218,8 +218,8 @@ div#page {
 		width: 240px;
 		height: 56px;
 		margin-left: -46px;
-		margin-bottom: 10px;
-		margin-top: 30px;
+		margin-bottom: 0;
+		margin-top: 0;
 	}
 		div#page .section_title h3{
 			font-size: 15px;
@@ -242,17 +242,28 @@ div#footer {
 /*--------------------------------------------
 Sidebar
 ---------------------------------------------*/
-#hp-boxes {
+.hp-boxes {
+	clear: both;
+	display: flex;
 }
-#hp-boxes .sidebar_box {
-	float: left;
-	margin-right: 20px;
-	min-height: 115px;
+.hp-boxes .sidebar_box {
+	flex: 1 100%;
+	margin: 0 10px 30px 0;
+}
+.hp-boxes .sidebar_box:first-child {
+	margin-left: 0;
+}
+.hp-boxes .sidebar_box:last-child {
+	margin-right: 0;
 }
 div.sidebar_box {
 	background: #e9eae9;
-	padding: 15px 20px 10px 20px;
+	padding: 15px 20px 15px 20px;
 	margin-bottom: 20px;
+	border-top-left-radius: 8px; 
+	border-top-right-radius: 8px; 
+	border-bottom-right-radius: 8px; 
+	border-bottom-left-radius: 8px;
 }
 	div.sidebar_box h4 { 
 		font-size: 13px; 
@@ -260,17 +271,24 @@ div.sidebar_box {
 		font-weight: bold; 
 		margin-bottom: 5px;
 	}
+	div.sidebar_box h3 { 
+		margin-bottom: 10px;
+	}
 	div.sidebar_box p { 
 		font-size: 12px; 
 		color: #707070; 
 		line-height: 18px; 
+	}
+	.hp-boxes.slic3r-is .sidebar_box p {
+		font-size: 16px;
+	}
+	div.sidebar_box p:last-child { 
 		margin-bottom: 0;
 	}
 	div.sidebar_box ul { list-style: circle; padding-left: 0; margin-top: 10px; margin-left: 15px !important; }
 		div.sidebar_box ul li { margin-bottom: 5px; margin-left: 0; }
 	div.sidebar_box a {
-		color: #444;
-		text-decoration: none;
+		text-decoration: underline;
 		line-height: 100%;
 	}
 	div.sidebar_box a.rss { 
@@ -579,7 +597,7 @@ h6 {
 b { color: #444; }
 span.highlight_dark { color: #fff; background: #555; padding: 2px 6px; }
 span.highlight_light { background: #ffffc8; padding: 2px 6px; }
-div#page p {
+p {
 	margin-bottom: 15px;
 }
 div.wrap_image_left,
@@ -661,7 +679,7 @@ Utility
 img { border: none; }
 a { outline: none; }
 a:hover {
-	color: #8f9214;
+	color: green;
 	text-decoration: underline;
 }
 hr {
@@ -674,7 +692,10 @@ hr {
 }
 
 /* Other slic3r.org styles */
-
+.download-button:hover {
+	color: white;
+	text-decoration: none;
+}
 .download td {
 	text-align: center;
 	vertical-align: top;

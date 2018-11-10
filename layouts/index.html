@@ -12,12 +12,12 @@
 					
 					{{ .Content }}
 					
-					<a href="/download" class="button icon"><img src="/images/go_icon.png" alt="" /><span>Download Now!</span></a>
+					<a href="/download" class="button icon download-button"><img src="/images/go_icon.png" alt="" /><span>Download Now!</span></a>
 					<span class="trial">Free. For macOS, Windows and Linux.</span>
 					
 					<div class="clear" style="margin-top: 40px">
                         {{ range first 1 (where .Site.RegularPages "Section" "==" "blog") }}
-                            Latest blog article:
+                            Latest blog article:<br />
                             <a href="{{ .URL }}" style="display: inline; text-decoration: none"><b>{{ .Title }}</b></a> &raquo;
                         {{ end }}
 					</div>
@@ -28,21 +28,70 @@
 			
 			<div id="home" class="padding">
 				
-				<div id="hp-boxes">
+				<div class="hp-boxes">
 				    
-				    <div class="sidebar_box" style="width: 385px; border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; ">
-						<h4>What does Slic3r do?</h4>
-						<p>Slic3r is the tool you need to <b>convert a digital 3D model into printing instructions for your 3D printer</b>. It cuts the model into horizontal slices (<b>layers</b>), generates toolpaths to fill them and calculates the amount of material to be extruded. <a href="/about">Read more...</a></p>
-					</div>
-					
-				    <div class="sidebar_box" style="width: 385px; border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; ">
+						<div class="sidebar_box" style="">
+							<p>Slic3r is <b>free software</b>, developed by <a href="/about">Alessandro Ranellucci</b></a> with the help of several contributors and a wonderful community.</p>
+							<p><a href="https://github.com/slic3r/Slic3r/issues">Join the discussion</a> on GitHub and help us make it better!</p>
+						</div>
+				    
+				    <div class="sidebar_box" style="">
                         <div style="float: right">
                             {{ partial "paypal" . }}
                         </div>
-						<p>Slic3r is <b>free software</b>, developed by <a href="/about">Alessandro Ranellucci</b></a> with the help of <a href="/about">contributors</a> and community.<br />
-						    If you find this software useful, want to say thanks and encourage development, please consider a donation (<a href="/donations/">more about donations</a>).</p>
+						<p>If you find this software useful, want to say thanks and encourage development, please consider a donation (<a href="/donations/">more about donations</a>).</p>
 					</div>
 					
+				</div>
+
+				<div class="section_title">
+					<h3>What is Slic3r?</h3>
+				</div>
+
+				<div class="hp-boxes slic3r-is">
+
+					<div class="sidebar_box">
+						<h3>The Slic3r desktop app</h3>
+						<ul>
+							<li>Turn your 3D models into G-code</li>
+							<li>Visual preview of toolpaths</li>
+							<li>Advanced configuration management</li>
+							<li>Custom G-code with conditional logic</li>
+							<li>Print spool queue (print on multiple machines simultaneously) or send to OctoPrint</li>
+							<li>FDM/FFF and SLA/DLP</li>
+							<li>modifiers (distinct settings on custom regions)</li>
+
+							<li>...and much more</li>
+						</ul>
+					</div>
+
+					<div class="sidebar_box">
+						<h3>The command line tool</h3>
+
+						<p>Most features are exposed from command line, thus providing a handy tool for batch operations and custom integrations:</p>
+
+						<ul>
+							<li>Generate G-code in batch form</li>
+							<li>Export SVG slices</li>
+							<li>Cut, transform, repair 3D models</li>
+							<li>Convert between 3D formats</li>
+						</ul>
+					</div>
+
+					<div class="sidebar_box">
+						<h3>libslic3r</h3>
+
+						<p>A C++ library for building custom applications on top of the Slic3r internal algorithms:</p>
+
+						<ul>
+							<li>Handle 3D models (open, repair, transform, convert)</li>
+							<li>Slice to vector data</li>
+							<li>Generate G-code in many flavors</li>
+							<li>Generate infill patterns</li>
+							<li>Send G-code over serial port</li>
+							<li>Estimate G-code printing time</li>
+						</ul>
+					</div>
 				</div>
 				
 				<div id="features">
