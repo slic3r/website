@@ -30,8 +30,8 @@ Click on your operating system to download the precompiled package:
             </td>
         </tr>
         <tr>
-            <td width=33%">
-                <a href="https://github.com/slic3r/Slic3r/releases/latest">Alternate download location/mirror (GitHub)</a>
+            <td width=100%">
+                <h3><a href="https://github.com/slic3r/Slic3r/releases/latest">Alternate download location/mirror (GitHub)</a></h3>
             </td>
         </tr>
     </tbody>
