@@ -6,10 +6,19 @@
     <description>Recent content in Blogs on Slic3r</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://slic3r.org/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Job Opportunities and Funded Development</title>
+      <link>https://slic3r.org/blog/job-opportunities/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://slic3r.org/blog/job-opportunities/</guid>
+      <description>In these years we&amp;rsquo;ve been receiving many requests for custom development related to Slic3r. Such requests originate from 3D printer vendors, manufacturers of other digital fabrication technologies (CNC, laser, robotics) or other companies. Whenever possible we try to write code that can be merged into the main codebase of Slic3r, so that the community can benefit from it: many important features of Slic3r were developed this way, thanks to sponsors and donors.</description>
+    </item>
     
     <item>
       <title>Mouse Ears!</title>
