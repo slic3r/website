@@ -1,6 +1,7 @@
 ---
 title: "1.3.0"
 date: 2018-05-10
+stable: true
 ---
 
 A new version, finally! Despite the long time since the last versioned release, work on Slic3r has never stopped. Daily automated builds are available on this website, so this release is not entirely new for all people who have been following development.
